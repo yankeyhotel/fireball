@@ -1,1 +1,1 @@
-Meteor.subscribe('clients');
+// Subscriptions taken care of by Iron Router /lib
