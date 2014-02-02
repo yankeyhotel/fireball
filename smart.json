@@ -1,7 +1,6 @@
 {
   "packages": {
-    "bootstrap-themes": {},
-    "bootstrap-3": {},
-    "bootstrap3-less": {}
+    "bootstrap3-less": {},
+    "iron-router": {}
   }
 }
