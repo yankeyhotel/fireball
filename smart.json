@@ -2,6 +2,7 @@
   "packages": {
     "bootstrap3-less": {},
     "iron-router": {},
-    "spin": {}
+    "spin": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }

@@ -10,3 +10,5 @@ less
 bootstrap3-less
 iron-router
 spin
+accounts-password
+accounts-ui-bootstrap-3
