@@ -17,7 +17,7 @@
 						<a href="{{pathFor 'clientsList'}}" class="dropdown-toggle" data-toggle="dropdown">Clients <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="{{pathFor 'clientsList'}}">View All Clients</a></li>
-							<li><a href="{{pathFor 'clientSubmit'}}">Add A Client</a></li>
+							{{#if currentUser}}<li><a href="{{pathFor 'clientSubmit'}}">Add A Client</a></li>{{/if}}
 							<li class="divider"></li>
 							<li><a href="">Freezer</a></li>
 						</ul>
