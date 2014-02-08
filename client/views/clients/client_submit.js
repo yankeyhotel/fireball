@@ -7,8 +7,12 @@ Template.clientSubmit.events ({
 			status: $(e.target).find('[name=status]').val()
 		}
 
-		client._id = Clients.insert(client);
-		Router.go('clientPage', client);
+		Meteor.call('client', client, function(error, id) {
+			if (error) {
+				return alert(error.reason);
+			}
+			Router.go('clientPage', {_id: id});
+		});
 
 	}
 });
