@@ -1,5 +1,10 @@
 Clients = new Meteor.Collection('clients');
 
+Clients.allow({
+	update: ownsDocument,
+	remove: ownsDocument
+});
+
 Meteor.methods({
 	client: function(clientAttributes) {
 		var user 				= Meteor.user(),
