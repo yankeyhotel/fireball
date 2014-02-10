@@ -5,6 +5,13 @@ Clients.allow({
 	remove: ownsDocument
 });
 
+Clients.deny({
+	update: function(userId, client, fieldNames) {
+		// may only edit the following two fields
+		return (_.without(fieldNames, 'title', 'status').length > 0);
+	}
+})
+
 Meteor.methods({
 	client: function(clientAttributes) {
 		var user 				= Meteor.user(),
