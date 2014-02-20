@@ -1,11 +1,8 @@
 	<template name="clientItem">
-		<div class="col-sm-4">
+		<div class="col-sm-12">
 			<div class="client-item">
-				<h1>{{title}}</h1>
-				<p>
-					<a href="{{pathFor 'clientPage'}}" class="btn btn-primary">View Projects</a>
-					{{#if ownsPost}}<a href="{{pathFor 'clientEdit'}}">Edit Client</a>{{/if}}
-				</p>
+				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
+				{{#if ownsPost}}<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>{{/if}}
 			</div>
 		</div>
 	</template>

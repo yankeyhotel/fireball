@@ -1,5 +1,14 @@
 <template name="clientPage">
 	<div class="row">
-		{{> clientItem}}
+		
+		<header class="col-sm-12">
+			<h1>
+				{{title}}
+				{{#if ownsPost}}
+					<small><a href="{{pathFor 'clientEdit'}}" class="btn btn-blue btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></small>
+				{{/if}}
+			</h1>
+		</header>
+
 	</div>
 </template>

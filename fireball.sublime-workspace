@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"Client",
+				"clientProperties"
+			],
+			[
+				"user",
+				"userId	Meteor: this.userId"
+			],
+			[
+				"clients",
+				"clientAttributes"
+			],
+			[
 				"font-",
 				"font-weight"
 			],
@@ -52,50 +68,29 @@
 	"buffers":
 	[
 		{
-			"file": "lib/router.js",
+			"file": "client/views/clients/client_page.html",
 			"settings":
 			{
-				"buffer_size": 453,
+				"buffer_size": 291,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "client/views/application/layout.html",
+			"file": "client/views/clients/client_page.js",
 			"settings":
 			{
-				"buffer_size": 1355,
+				"buffer_size": 102,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "client/views/clients/client_submit.html",
-			"settings":
-			{
-				"buffer_size": 943,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "client/views/clients/client_submit.js",
-			"settings":
-			{
-				"buffer_size": 290,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "collections/clients.js",
-			"settings":
-			{
-				"buffer_size": 165,
-				"line_ending": "Unix"
-			}
-		},
-		{
+			"contents": "/* Fireball\n * ..........................................................................\n * http://fireball.is\n * designed by Switch Creative\n * http://switch.is\n*/\n	\n	/* ! Structure */\n	/* Twitter Bootstrap 3.0.3 */\n	/* ======================================================= */\n	\n	/*\n	 * -------------------------	\n	 * Fonts\n	 * -------------------------\n	 * SANS-SERIF\n	 *	Gotham\n	 *		Light 	300*\n	 * 		Book 	400\n	 *		Medium	500*\n	 * 		Bold	700\n	 *\n	 * SERIF\n	 *	Adobe Garamond Pro\n	 *		Regular				400\n	 *		Semibold			600\n	 *\n	 * -------------------------\n	 * Colors\n	 * -------------------------\n	 * @gray-darker: 	lighten(#000, 13.5%); 	// #222\n	 * @gray-dark:      lighten(#000, 20%);   	// #333\n	 * @gray:           lighten(#000, 30%); 	// #4d4d4d\n	 * @gray-medium: 	lighten(#000, 50%); 	// #808080\n	 * @gray-light:     lighten(#000, 60%);   	// #999\n	 * @gray-lighter:   lighten(#000, 90%); 	// #e6e6e6\n	 *\n	 * @brand-primary:  #428bca;\n	 * @brand-success:  #5cb85c;\n	 * @brand-info:     #5bc0de;\n	 * @brand-warning:  #f0ad4e;\n	 * @brand-danger:   #d9534f;\n	 *\n	 * @red: 			#bf2525;\n	 * @red-bright: 	#c1221d;\n	 *\n	 */\n\n	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);\n	@import \"/packages/bootstrap3-less/bootstrap.lessimport\";\n	\n	\n	@body-bg: 						#34495e;\n	@navbar-inverse-bg: 			#2c3e50;\n	@brand-primary: 				#e67e22;\n	@navbar-inverse-color: 			#fff;\n	@navbar-inverse-link-color: 	#fff;\n	@well-bg: 						#fff;\n	@well-border: 					#2c3e50;\n\n	@text-color: 					@navbar-inverse-bg;\n\n	\n\n\n	body {\n		color: #fff;\n		padding-top: 65px;\n	}\n\n	h1 {\n		font-weight: 800;\n	}\n	\n	/* End Structure ========================================== */\n\n	\n	/* ! Header */\n	/* ======================================================= */\n		header {\n			h1 { \n				border-bottom: 1px solid @text-color;\n				padding-bottom: 10px;\n				.btn {\n					vertical-align: top;\n				}\n			}\n		}// header\n	/* End Header ================================================ */		\n	\n\n	/* ! Client */\n	/* ======================================================= */\n		.client-item {\n			background-color: @well-bg;\n			border: 1px solid @well-border;\n			border-radius: 0;\n			margin: 15px 0;\n			padding: 20px;\n			\n			h1 {\n				color: @text-color;\n				#font > .sans-serif(2em, @bold, @line-height-base);\n				margin: 0 0 .4em;\n				padding: 0;\n			}\n\n		}// .client\n	/* End Client ================================================ */\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
 			"file": "client/_css/styles.less",
+			"file_size": 2477,
+			"file_write_time": 130374082210000000,
 			"settings":
 			{
-				"buffer_size": 1904,
+				"buffer_size": 2480,
 				"line_ending": "Unix"
 			}
 		}
@@ -152,15 +147,32 @@
 	},
 	"file_history":
 	[
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/variables.lessimport",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/_css/styles.less",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/lib/permissions.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/lib/router.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/loading.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access_denied.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/config.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/clients.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access-denied.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/fireball.sublime-project",
 		"/Users/yankeyhotel/Sites_meteor/fireball/server/fixtures.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/collections/clients.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/admin/admin_template.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/lib/router.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/lib/admin.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/config.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/client/accounts_admin.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/client/accounts_admin.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/app.js",
@@ -177,16 +189,8 @@
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/.build/browser/packages/accounts-admin-ui-bootstrap-3/style/style.css",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/.build/os/packages/accounts-admin-ui-bootstrap-3.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/.build/package.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/_css/styles.less",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/loading.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/server/publications.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/variables.lessimport",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/bootstrap.lessimport",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/mixins-switch.lessimport",
 		"/Users/yankeyhotel/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -298,108 +302,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "lib/router.js",
+					"file": "client/views/clients/client_page.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 453,
+						"buffer_size": 291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								453,
-								453
+								225,
+								225
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "client/views/application/layout.html",
+					"file": "client/views/clients/client_page.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1355,
+						"buffer_size": 102,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								926,
-								926
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "client/views/clients/client_submit.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 943,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								468,
-								468
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "client/views/clients/client_submit.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 290,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								203,
-								203
+								19,
+								19
 							]
 						],
 						"settings":
@@ -414,59 +362,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "collections/clients.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13,
-								13
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
+					"buffer": 2,
 					"file": "client/_css/styles.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1904,
+						"buffer_size": 2480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1353,
-								1353
+								1550,
+								1550
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 606.0,
+						"translation.x": 0.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -528,7 +448,7 @@
 		[
 			[
 				"",
-				"~/Sites_rails/pintersting/pintersting.sublime-project"
+				"~/Sites/Maggianos.com/maggianos-com.sublime-project"
 			]
 		],
 		"width": 380.0
