@@ -2,6 +2,7 @@
 		<div class="col-sm-12">
 			<div class="client-item">
 				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
+				<p>{{projectsCount}} Active Projects</p>
 				{{#if currentUser}}
 					{{#if ownsPost }}
 						<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>

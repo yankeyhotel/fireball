@@ -1,14 +1,28 @@
 <template name="clientPage">
-	<div class="row">
-		
-		<header class="col-sm-12">
-			<h1>
-				{{title}}
+
+	<header>
+		<h1>
+			{{title}}
+			{{#if currentUser}}
 				{{#if ownsPost}}
 					<small><a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></small>
 				{{/if}}
-			</h1>
-		</header>
+			{{/if}}
+		</h1>
+	</header>
 
-	</div>
+	<section class="current-projects">
+		{{#each projects}}
+			{{> project}}
+		{{/each}}
+	</section>
+
+	<section class="add-project">
+		{{#if currentUser}}
+			{{> projectSubmit}}
+		{{else}}
+			<p>Please log in to create a project</p>
+		{{/if}}
+	</section>
+
 </template>
