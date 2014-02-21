@@ -11,9 +11,15 @@ Template.clientSubmit.events ({
 		// to add the client to the db
 		Meteor.call('client', client, function(error, id) {
 			if (error) {
-				return alert(error.reason);
+				// display error to user
+				Errors.throw(error.reason);
+				
+				if (error.error === 302) {
+					Router.go('clientPage', {_id: error.details});
+				}
+			} else {
+				Router.go('clientPage', {_id: id});
 			}
-			Router.go('clientPage', {_id: id});
 		});
 
 	}
