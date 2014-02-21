@@ -50,19 +50,19 @@
 	@import "/packages/bootstrap3-less/bootstrap.lessimport";
 	
 	
-	@body-bg: 						#34495e;
-	@navbar-inverse-bg: 			#2c3e50;
-	@brand-primary: 				#e67e22;
-	@navbar-inverse-color: 			#fff;
-	@navbar-inverse-link-color: 	#fff;
-	@well-bg: 						#fff;
-	@well-border: 					#2c3e50;
+	@body-bg: 							#34495e;
+	@navbar-inverse-bg: 				#2c3e50;
+	@brand-primary: 					#e67e22;
+	@navbar-inverse-color: 				#fff;
+	@navbar-inverse-link-color: 		#fff;
+	@navbar-inverse-link-hover-color: 	#f39c12;	
+	@well-bg: 							#fff;
+	@well-border: 						#2c3e50;
 
-	@text-color: 					@navbar-inverse-bg;
-	@blue: 							#3498db;
+	@text-color: 						@navbar-inverse-bg;
+	@blue: 								#3498db;
 
 	.btn-blue { .button-variant(#fff, @blue, @blue); }
-
 
 	body {
 		color: #fff;
@@ -79,13 +79,22 @@
 
 	/* End Structure ========================================== */
 
+
+	/* ! Navbar */
+	/* ======================================================= */
+		.navbar {
+			.navbar-brand { font-weight: 800; }
+		}// .navbar
+	/* End Navbar ================================================ */
+
+
 	
 	/* ! Header */
 	/* ======================================================= */
 		header {
 			h1 { 
-				border-bottom: 1px solid @text-color;
-				padding-bottom: 10px;
+				border-bottom: 1px solid darken(@text-color, 10%);
+				padding-bottom: 15px;
 				.btn {
 					vertical-align: top;
 				}
@@ -110,8 +119,9 @@
 				margin: 0;
 				padding: 0;
 				a { 
-					color: @text-color; 
-					&:hover { color: @blue; }
+					color: @text-color;
+					.transition(color .3s ease-out); 
+					&:hover { color: @brand-primary; }
 				}
 			}
 

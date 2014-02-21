@@ -7,8 +7,10 @@ Template.clientEdit.events({
 
 		var clientProperties = {
 			title: $(e.target).find('[name=title]').val(),
-			status: $(e.target).find('[name=status]').val()
+			status: $(e.target).find('[name=status]:checked').val()
 		}
+
+		console.log(clientProperties.status);
 
 		Clients.update(currentClientId, {$set: clientProperties}, function(error) {
 			if (error) {

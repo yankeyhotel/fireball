@@ -8,17 +8,17 @@
 					<label for="title" class="col-sm-2 control-label sr-only">Client Name</label>
 					<input type="text" class="form-control" id="title" name="title" value="{{title}}" placeholder="Client Name">
 				</div>
-				
+
 				<div class="form-group">
 					<div class="radio">
 						<label>
-							<input type="radio" name="status" id="status-radio-1" value="active" checked>
+							<input type="radio" name="status" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
 							This client is <b>active</b>.
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" name="status" id="status-radio-2" value="archived">
+							<input type="radio" name="status" id="status-radio-2" value="archived" {{checked_eq status 'archived'}} >
 							This client is <b>archived</b>.
 						</label>
 					</div>
