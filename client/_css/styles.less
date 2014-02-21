@@ -48,19 +48,7 @@
 
 	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);
 	@import "/packages/bootstrap3-less/bootstrap.lessimport";
-	
-	
-	@body-bg: 							#34495e;
-	@navbar-inverse-bg: 				#2c3e50;
-	@brand-primary: 					#e67e22;
-	@navbar-inverse-color: 				#fff;
-	@navbar-inverse-link-color: 		#fff;
-	@navbar-inverse-link-hover-color: 	#f39c12;	
-	@well-bg: 							#fff;
-	@well-border: 						#2c3e50;
 
-	@text-color: 						@navbar-inverse-bg;
-	@blue: 								#3498db;
 
 	.btn-blue { .button-variant(#fff, @blue, @blue); }
 
@@ -105,21 +93,29 @@
 
 	/* ! Client */
 	/* ======================================================= */
+		#clients-list { margin-bottom: 50px; }
+
 		.client-item {
-			background-color: @well-bg;
-			// border: 1px solid @well-border;
+			background-color: @navbar-inverse-bg;
+			border-bottom: 3px solid @navbar-inverse-bg;
+			// border: 1px solid darken(@navbar-inverse-bg, 10%);
 			border-radius: 0;
 			margin: 10px 0;
 			padding: 15px;
 			position: relative;
+			.transition(border-color .3s ease-out);
+
+			&:hover {
+				border-bottom: 3px solid @blue;
+			}
 			
 			h1 {
-				color: @text-color;
+				color: #fff;
 				#font > .sans-serif(1.75em, @bold, @line-height-base);
 				margin: 0;
 				padding: 0;
 				a { 
-					color: @text-color;
+					color: #fff;
 					.transition(color .3s ease-out); 
 					&:hover { color: @brand-primary; }
 				}

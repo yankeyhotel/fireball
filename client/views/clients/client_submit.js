@@ -7,6 +7,8 @@ Template.clientSubmit.events ({
 			status: $(e.target).find('[name=status]').val()
 		}
 
+		// call the client method in /collections/clients.js
+		// to add the client to the db
 		Meteor.call('client', client, function(error, id) {
 			if (error) {
 				return alert(error.reason);
