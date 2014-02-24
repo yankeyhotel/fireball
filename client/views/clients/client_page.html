@@ -13,11 +13,28 @@
 		</h1>
 	</header>
 
-	<section class="current-projects">
-		{{#each projects}}
-			{{> project}}
-		{{/each}}
-	</section>
+
+	<div class="row">
+		<div class="col-sm-3">
+			<ul class="meta list-unstyled">
+				<li><b>Liason:</b> {{findClientLiason clientLiason}}</li>
+				<li><b>Created by:</b> {{author}}</li>
+				<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
+				<li><b>Status:</b> {{status}}</li>
+				<li><b>Project Count:</b> {{projectCount}}</li>
+			</ul>
+		</div>
+
+		<div class="col-sm-9">
+			<section class="current-projects">
+				{{#each projects}}
+					{{> project}}
+				{{/each}}
+			</section>
+		</div>
+	</div>
+
+
 
 	<section class="add-project">
 		{{#if currentUser}}

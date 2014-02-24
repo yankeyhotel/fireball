@@ -11,15 +11,23 @@
 				</div>
 				
 				<div class="form-group">
+					<span class="help-block">Client Liason</span>
+					{{#each projectManagers}}
+						{{> userList}}
+					{{/each}}
+				</div>
+
+				<div class="form-group">
+					<span class="help-block">Client Status</span>
 					<div class="radio">
 						<label>
-							<input type="radio" name="status" id="status-radio-1" value="active" checked>
+							<input type="radio" name="status" value="active" {{checked_eq status 'active'}}>
 							This client is <b>active</b>.
 						</label>
 					</div>
 					<div class="radio">
 						<label>
-							<input type="radio" name="status" id="status-radio-2" value="archived">
+							<input type="radio" name="status" value="archived" {{checked_eq status 'archived'}}>
 							This client is <b>archived</b>.
 						</label>
 					</div>

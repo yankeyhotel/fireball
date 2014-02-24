@@ -8,7 +8,7 @@ Clients.allow({
 Clients.deny({
 	update: function(userId, client, fieldNames) {
 		// may only edit the following two fields
-		return (_.without(fieldNames, 'title', 'status').length > 0);
+		return (_.without(fieldNames, 'title', 'status', 'clientLiason').length > 0);
 	}
 })
 
@@ -33,9 +33,9 @@ Meteor.methods({
 		}
 
 		// pick out the whitelisted keys
-		var client = _.extend(_.pick(clientAttributes, 'title', 'status'), {
+		var client = _.extend(_.pick(clientAttributes, 'title', 'status', 'clientLiason'), {
 			userId: 	user._id,
-			author: 	user.email,
+			author: 	user.profile.name,
 			submitted: 	new Date().getTime(),
 			projectCount: 0
 		});

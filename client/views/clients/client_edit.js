@@ -1,3 +1,13 @@
+
+
+Template.clientEdit.helpers({
+	projectManagers: function () {
+		// console.log( Meteor.users.find({}, { fields: { 'profile.role': 1, _id: 0 } }).fetch() );
+		return Meteor.users.find({ "profile.role" : 'Project Manager' });
+	}
+});
+
+
 Template.clientEdit.events({
 	
 	'submit form': function(e) {
@@ -7,6 +17,7 @@ Template.clientEdit.events({
 
 		var clientProperties = {
 			title: $(e.target).find('[name=title]').val(),
+			clientLiason: $(e.target).find('[name=clientLiason]:checked').val(),
 			status: $(e.target).find('[name=status]:checked').val()
 		}
 

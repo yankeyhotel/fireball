@@ -96,12 +96,17 @@
 	/* ! Header */
 	/* ======================================================= */
 		header {
+			border-bottom: 1px solid darken(@text-color, 10%);
+			margin-bottom: 30px;
 			h1 { 
-				border-bottom: 1px solid darken(@text-color, 10%);
 				margin-top: 10px;
-				padding-bottom: 15px;
-				.btn {
-					vertical-align: top;
+				.btn { vertical-align: top; }
+			}
+			p {
+				color: #fff;
+				b { 
+					color: @blue;
+					text-transform: uppercase; 
 				}
 			}
 		}// header
@@ -172,9 +177,56 @@
 
 		}// .client
 	/* End Client ================================================ */
+	
 
 
+	/* ! Project Info */
+	/* ======================================================= */
+		.project-info {
+			h5 {
+				color: @blue;
+				font-weight: 800;
+				margin-top: 20px;
+				text-transform: uppercase;
+			}
+			ul {
+				.list-unstyled();
+			}
+			
+			p {
+				font-size: 12px;
+			}
+		}// .project-info
+	/* End Project Info ================================================ */
 
+	
+	.current-projects {
+		margin-top: -10px;
+	}
+
+	.meta {
+		li {
+			margin-bottom: 5px;
+		}
+		b {
+			color: @blue;
+			text-transform: uppercase;
+		}
+	}
+
+	.help-block,
+	.control-label {
+		color: @blue;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+
+	.modal-sm {
+		.help-block,
+		.control-label {
+			color: @text-color;
+		}
+	}
 
 
 

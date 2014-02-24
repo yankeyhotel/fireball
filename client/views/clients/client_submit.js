@@ -1,10 +1,20 @@
+
+Template.clientSubmit.helpers({
+	projectManagers: function () {
+		// console.log( Meteor.users.find({}, { fields: { 'profile.role': 1, _id: 0 } }).fetch() );
+		return Meteor.users.find({ "profile.role" : 'Project Manager' });
+	}
+});
+
+
 Template.clientSubmit.events ({
 	'submit form': function(e) {
 		e.preventDefault();
 
 		var client = {
 			title: 	$(e.target).find('[name=title]').val(),
-			status: $(e.target).find('[name=status]').val()
+			clientLiason: $(e.target).find('[name=clientLiason]:checked').val(),
+			status: $(e.target).find('[name=status]:checked').val()
 		}
 
 		// call the client method in /collections/clients.js

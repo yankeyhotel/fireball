@@ -14,6 +14,35 @@
 		</h1>
 	</header>
 
+	<div class="project-info">
+		<div class="row">
+
+			<div class="col-sm-3">
+				<ul class="meta list-unstyled">
+					<li><b>Created by:</b> {{author}}</li>
+					<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
+					<li><b>Status:</b> {{status}}</li>
+					<li><b>Task Count:</b> {{projectCount}}</li>
+				</ul>
+
+				<h5>Project Managers</h5>
+				{{#userListById projectManagers}}{{/userListById}}
+				<h5>Designers</h5>
+				{{#userListById designers}}{{/userListById}}
+				<h5>Web Developers</h5>
+				{{#userListById webDevelopers}}{{/userListById}}
+				<h5>Project Description</h5>
+				<p>{{description}}</p>
+
+			</div>
+
+			<div class="col-sm-8 col-sm-offset-1">
+				
+			</div>
+
+		</div>
+	</div>
+
 	<section class="current-tasks">
 	</section>
 

@@ -9,3 +9,7 @@ Meteor.publish('projects', function (clientId) {
 Meteor.publish('projectsPage', function (id) {
 	return Projects.find({_id: id});
 });
+
+Meteor.publish('allUsers', function() {
+	return Meteor.users.find();
+});

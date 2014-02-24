@@ -2,7 +2,7 @@
 		<div class="col-sm-12">
 			<div class="client-item {{status}}">
 				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
-				<p>{{projectCount}} Active Projects</p>
+				<p>{{projectCount}} Active Projects | {{findClientLiason clientLiason}}</p>
 				{{#if currentUser}}
 					{{#if ownsPost }}
 						<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>

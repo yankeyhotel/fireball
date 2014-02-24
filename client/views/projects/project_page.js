@@ -6,6 +6,8 @@ Template.projectPage.helpers({
 
 	clientName: function(){
 		return Clients.findOne(this.clientId).title;
-	}
+	},
 
 });
+
+
