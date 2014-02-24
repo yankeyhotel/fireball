@@ -61,18 +61,34 @@
 		font-weight: 800;
 	}
 	
-	a {
-		&:hover { text-decoration: none; }
+	a { &:hover { text-decoration: none; } }
+
+	.modal-sm { 
+		color: @text-color;
+		width: 300px;
+		.modal-title { font-weight: 800; }
 	}
 
 	/* End Structure ========================================== */
-
+	
 
 	/* ! Navbar */
 	/* ======================================================= */
 		.navbar {
 			.navbar-brand { font-weight: 800; }
 		}// .navbar
+		
+		#fireball {
+			.transition(color .5s ease-out);
+			&.yellow 	{ color: #f1c40f; }
+			&.orange 	{ color: #f39c12; }
+			&.carrot 	{ color: #e67e22; }
+			&.pumpkin 	{ color: #d35400; }
+			&.alizarin 	{ color: #e74c3c; }
+			&.pomegranate { color: #c0392b; }
+		}
+
+
 	/* End Navbar ================================================ */
 
 
@@ -82,6 +98,7 @@
 		header {
 			h1 { 
 				border-bottom: 1px solid darken(@text-color, 10%);
+				margin-top: 10px;
 				padding-bottom: 15px;
 				.btn {
 					vertical-align: top;
@@ -107,6 +124,7 @@
 
 			&:hover {
 				border-bottom: 3px solid @blue;
+				cursor: pointer;
 			}
 			
 			h1 {
@@ -133,6 +151,23 @@
 				position: absolute;
 					top: 50%;
 					right: 18px;
+			}
+
+
+			// project
+			&.project {
+
+			}
+			
+			&.archived {
+				border-bottom: 3px solid @navbar-inverse-bg;
+				&:hover { border-bottom: 3px solid @brand-danger; }
+				h1 { color: @body-bg; 
+					a { color: @body-bg; }
+				}
+				p {
+					color: @body-bg;
+				}
 			}
 
 		}// .client

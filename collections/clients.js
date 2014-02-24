@@ -36,7 +36,8 @@ Meteor.methods({
 		var client = _.extend(_.pick(clientAttributes, 'title', 'status'), {
 			userId: 	user._id,
 			author: 	user.email,
-			submitted: 	new Date().getTime()
+			submitted: 	new Date().getTime(),
+			projectCount: 0
 		});
 
 		var clientId = Clients.insert(client);

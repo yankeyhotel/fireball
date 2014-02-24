@@ -1,0 +1,31 @@
+<template name="projectPage">
+
+	<header>
+		<h5><a href="/client/{{clientId}}">{{clientName clientId}}</a></h5>
+		<h1>
+			{{title}}
+			{{#if currentUser}}
+				{{#if ownsProject}}
+					<small><a class="btn btn-primary btn-xs"  data-toggle="modal" data-target="#project-modal"><span class="glyphicon glyphicon-pencil"></span></a></small>
+				{{/if}}
+
+				<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#task-modal">Create a New Task</button>
+			{{/if}}
+		</h1>
+	</header>
+
+	<section class="current-tasks">
+	</section>
+
+	<section class="add-task">
+	</section>
+
+	<section class="edit-project">
+		{{#if currentUser}}
+			{{> projectEdit}}
+		{{else}}
+			<p>Please log in to create a project</p>
+		{{/if}}
+	</section>
+
+</template>

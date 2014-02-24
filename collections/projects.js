@@ -1,5 +1,17 @@
 Projects = new Meteor.Collection('projects');
 
+Projects.allow({
+	update: ownsDocument,
+	remove: ownsDocument
+});
+
+Projects.deny({
+	update: function(userId, clientId, fieldNames) {
+		// may only edit the following two fields
+		return (_.without(fieldNames, 'title', 'status').length > 0);
+	}
+})
+
 Meteor.methods({
 	project: function(projectAttributes) {
 		var user = Meteor.user();
@@ -20,11 +32,13 @@ Meteor.methods({
 			throw new Meteor.Error(422, "You must add a project to a specific client.");
 		}
 		
-		project = _.extend(_.pick(projectAttributes, 'clientId', 'title'),{
-			userId: user.Id,
+		project = _.extend(_.pick(projectAttributes, 'clientId', 'title', 'status'),{
+			userId: user._id,
 			author: user.profile.name,
 			submitted: new Date().getTime()
 		});
+
+		Clients.update(project.clientId, {$inc: {projectCount: 1}});
 
 		return Projects.insert(project);
 

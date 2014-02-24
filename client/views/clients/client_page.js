@@ -1,5 +1,5 @@
 Template.clientPage.helpers({
-	ownsPost: function() {
+	ownsClient: function() {
 		return this.userId == Meteor.userId();
 	},
 

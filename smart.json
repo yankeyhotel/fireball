@@ -3,6 +3,7 @@
     "bootstrap3-less": {},
     "iron-router": {},
     "spin": {},
-    "accounts-ui-bootstrap-3": {}
+    "accounts-ui-bootstrap-3": {},
+    "moment": {}
   }
 }

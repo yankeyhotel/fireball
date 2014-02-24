@@ -1,11 +1,13 @@
 Template.projectSubmit.events ({
 
 	'submit form': function(e, template) {
+
 		e.preventDefault();
 
 		var $title = $(e.target).find('[name=title]');
 		var project = {
 			title: $title.val(),
+			status: $(e.target).find('[name=status]:checked').val(),
 			clientId: template.data._id
 		};
 
@@ -16,6 +18,8 @@ Template.projectSubmit.events ({
 				$title.val('');
 			}
 		});
+
+		$('#project-modal').modal('hide');
 
 	}
 
