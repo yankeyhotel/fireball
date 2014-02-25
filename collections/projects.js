@@ -8,7 +8,7 @@ Projects.allow({
 Projects.deny({
 	update: function(userId, clientId, fieldNames) {
 		// may only edit the following two fields
-		return (_.without(fieldNames, 'title', 'status').length > 0);
+		return (_.without(fieldNames, 'title', 'status', 'dueDate', 'description', 'projectManagers', 'designers', 'webDevelopers').length > 0);
 	}
 })
 
@@ -32,10 +32,11 @@ Meteor.methods({
 			throw new Meteor.Error(422, "You must add a project to a specific client.");
 		}
 		
-		project = _.extend(_.pick(projectAttributes, 'clientId', 'title', 'status'),{
+		project = _.extend(_.pick(projectAttributes, 'title', 'status', 'clientId', 'dueDate', 'description', 'projectManagers', 'designers', 'webDevelopers'),{
 			userId: user._id,
 			author: user.profile.name,
-			submitted: new Date().getTime()
+			submitted: new Date().getTime(),
+			taskCount: 0
 		});
 
 		Clients.update(project.clientId, {$inc: {projectCount: 1}});

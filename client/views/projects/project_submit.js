@@ -1,6 +1,7 @@
 Template.projectSubmit.rendered = function() {
-    $('.datetimepicker').datetimepicker();
+	$('.datetimepicker').datetimepicker();
 }
+
 
 Template.projectSubmit.helpers({
 	userByRole: function (role) {
@@ -10,6 +11,7 @@ Template.projectSubmit.helpers({
 	}
 });
 
+
 Template.projectSubmit.events ({
 
 	'submit form': function(e, template) {
@@ -18,38 +20,40 @@ Template.projectSubmit.events ({
 
 		var $title = $(e.target).find('[name=title]');
 
+		var projectManagers = [];
+		$('input[name=projectManagers]:checked').each(function() {
+			projectManagers.push($(this).val());
+		});
+
+		var designers = [];
+		$('input[name=designers]:checked').each(function() {
+			designers.push($(this).val());
+		});
+
+		var webDevelopers = [];
+		$('input[name=webDevelopers]:checked').each(function() {
+			webDevelopers.push($(this).val());
+		});
+
 		var project = {
 			title: $title.val(),
 			status: $(e.target).find('[name=status]:checked').val(),
-			clientId: this._id
+			clientId: template.data._id,
+			dueDate: new Date($(e.target).find('[name=dueDate]').val()).getTime(),
+			description: $(e.target).find('[name=description]').val(),
+			projectManagers: projectManagers,
+			designers: designers,
+			webDevelopers: webDevelopers
 		};
 
 		Meteor.call('project', project, function(error, projectId) {
 			if (error) {
-				throwError(error.reason);
+				Errors.throw(error.reason);
 			} else {
-				$title.val('');
+				Router.go('clientPage', {_id: template.data._id});
 			}
 		});
 
-		$('#project-modal').modal('hide');
-
 	}
 
-});
-
-
-
-Template.userByRole.helpers({
-
-	setName: function(role) {
-		if (role == "Project Manager") {
-			return "projectManagers";
-		} else if (role == "Designer") {
-			return "designers";
-		} else if (role == "Web Developer") {
-			return "webDevelopers"
-		}
-	}
-	
 });

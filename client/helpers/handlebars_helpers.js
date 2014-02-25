@@ -15,8 +15,9 @@ Handlebars.registerHelper('checked_eq', function(x, y){
 // http://stackoverflow.com/questions/18580495/format-a-date-from-inside-a-handlebars-template-in-meteor
 // use http://momentjs.com/docs/ to create more formats
 var DateFormats = {
-		short: "MMMM DD, YYYY",
-		long: "dddd DD.MM.YYYY HH:mm"
+		short: "MMM. DD, YYYY",
+		long: "dddd DD.MM.YYYY HH:mm",
+		datepicker: "MM/DD/YYYY hh:mm A"
 };
 
 Handlebars.registerHelper("formatDate", function(datetime, format) {

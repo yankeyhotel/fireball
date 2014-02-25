@@ -137,8 +137,8 @@ if (Clients.find().count() === 0) {
 	// ------------------------------------------------
 	var maggianosId = Clients.insert ({
 		title: "Maggiano's Little Italy",
-		userId: kelsey._id,
-		author: kelsey.profile.name,
+		userId: matt._id,
+		author: matt.profile.name,
 		status: "active",
 		submitted: now - 7 * 3600 * 1000,
 		projectCount: 2,
@@ -170,8 +170,8 @@ if (Clients.find().count() === 0) {
 	// ------------------------------------------------
 	var stuffedEmailId = Projects.insert ({
 		clientId: maggianosId,
-		userId: kelsey._id,
-		author: kelsey.profile.name,
+		userId: matt._id,
+		author: matt.profile.name,
 		submitted: now - 5 * 3600 * 1000,
 		dueDate: now + 30 * 3600 * 1000,
 		title: "Stuffed Pastas Email",
@@ -193,8 +193,8 @@ if (Clients.find().count() === 0) {
 
 	var stuffedWebId = Projects.insert ({
 		clientId: maggianosId,
-		userId: kelsey._id,
-		author: kelsey.profile.name,
+		userId: matt._id,
+		author: matt.profile.name,
 		submitted: now - 5 * 3600 * 1000,
 		dueDate: now + 30 * 3600 * 1000,
 		title: "Stuffed Pastas Website",

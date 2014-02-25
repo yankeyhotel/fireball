@@ -1,13 +1,13 @@
 <template name="projectEdit">
 
 	<div id="project-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
+		<div class="modal-dialog modal-md">
 
 			<div class="modal-content">
 				
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title" id="mySmallModalLabel">Edit "{{title}}"</h4>
+					<h4 class="modal-title" id="mySmallModalLabel">You are editing <b>"{{title}}"</b></h4>
 				</div>
 
 				<div class="modal-body">
@@ -19,6 +19,41 @@
 						</div>
 
 						<div class="form-group">
+							<label for="title" class="control-label">Due Date</label>
+							<div class="input-group datetimepicker">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+								<input class="set-due-date form-control" type="text" name="dueDate" value="{{formatDate dueDate 'datepicker'}}"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Project Description</label>
+							<textarea class="form-control" rows="2" name="description">{{description}}</textarea>
+						</div>
+						
+						<div class="form-group">
+							<label for="title" class="control-label">Project Managers</label><br/>
+							{{#each userByRole "Project Manager"}}
+								{{> userByRole}}
+							{{/each}}
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Designers</label><br/>
+							{{#each userByRole "Designer"}}
+								{{> userByRole}}
+							{{/each}}
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Web Developers</label><br/>
+							{{#each userByRole "Web Developer"}}
+								{{> userByRole}}
+							{{/each}}
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Project Status</label>
 							<div class="radio">
 								<label>
 									<input type="radio" name="status" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
@@ -34,7 +69,7 @@
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class="btn btn-success">Submit</button>
+							<button type="submit" class="btn btn-success">Submit</button> &emsp;
 							<button type="button" class="btn btn-danger delete" data-dismiss="modal">Delete</button>
 						</div>
 
@@ -46,3 +81,4 @@
 	</div>
 
 </template>
+
