@@ -6,7 +6,8 @@
       "iron-router": {},
       "spin": {},
       "accounts-ui-bootstrap-3": {},
-      "moment": {}
+      "moment": {},
+      "bootstrap3-datetimepicker": {}
     },
     "packages": {
       "bootstrap3-less": {
@@ -16,8 +17,8 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.3",
-        "commit": "79861385df5d2b667630ec82abe4de3efa3166e3"
+        "tag": "v0.6.4",
+        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
@@ -33,6 +34,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.5.1",
         "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      },
+      "bootstrap3-datetimepicker": {
+        "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
+        "tag": "v0.0.5",
+        "commit": "30b5fa0759f98b75761772ad891876408f7cc8c4"
       }
     }
   }

@@ -1,48 +1,85 @@
 <template name="projectSubmit">
+		
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h1>Add A Project</h1>
 
-	<div id="project-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
-
-			<div class="modal-content">
-				
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title" id="mySmallModalLabel">Create a new project</h4>
+			<form name="project" class="project-form">
+		
+				<div class="form-group">
+					<label for="title" class="control-label">Project Name</label>
+					<input type="text" class="form-control" id="title" name="title" placeholder="Project Name">
 				</div>
 
-				<div class="modal-body">
-					<form name="project" class="project-form">
+				<div class="form-group">
+					<label for="title" class="control-label">Due Date</label>
+					<div class="input-group datetimepicker">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						<input class="set-due-date form-control" type="text"/>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="title" class="control-label">Project Description</label>
+					<textarea class="form-control" rows="2"></textarea>
+				</div>
 				
-						<div class="form-group">
-							<label for="title" class="control-label">Project Name</label>
-							<input type="text" class="form-control" id="title" name="title" placeholder="Project Name">
-						</div>
+				<div class="form-group">
+					<label for="title" class="control-label">Project Managers</label><br/>
+					{{#each userByRole "Project Manager"}}
+						{{> userByRole}}
+					{{/each}}
+				</div>
 
-						<div class="form-group">
-							<div class="radio">
-								<label>
-									<input type="radio" name="status" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
-									This project is <b>active</b>.
-								</label>
-							</div>
-							<div class="radio">
-								<label>
-									<input type="radio" name="status" id="status-radio-2" value="archived" {{checked_eq status 'archived'}} >
-									This project is <b>archived</b>.
-								</label>
-							</div>
-						</div>
+				<div class="form-group">
+					<label for="title" class="control-label">Designers</label><br/>
+					{{#each userByRole "Designer"}}
+						{{> userByRole}}
+					{{/each}}
+				</div>
 
-						<div class="form-group">
-							<button type="submit" class="btn btn-success">Submit</button>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-						</div>
+				<div class="form-group">
+					<label for="title" class="control-label">Web Developers</label><br/>
+					{{#each userByRole "Web Developer"}}
+						{{> userByRole}}
+					{{/each}}
+				</div>
 
-					</form>
-				</div><!-- /modal-body -->
+				<div class="form-group">
+					<label for="title" class="control-label">Project Status</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="status" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
+							This project is <b>active</b>.
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="status" id="status-radio-2" value="archived" {{checked_eq status 'archived'}} >
+							This project is <b>archived</b>.
+						</label>
+					</div>
+				</div>
 
-			</div><!-- /modal-content -->
+				<div class="form-group">
+					<button type="submit" class="btn btn-success">Submit</button> &emsp;
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+
+			</form>
+
 		</div>
 	</div>
 
+
 </template>
+
+
+
+<template name="userByRole">
+	<label class="checkbox-inline">
+		<input type="checkbox" name="{{setName profile.role}}" value="{{_id}}"> {{profile.name}}
+	</label>
+</template>
+
+

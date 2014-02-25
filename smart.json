@@ -4,6 +4,7 @@
     "iron-router": {},
     "spin": {},
     "accounts-ui-bootstrap-3": {},
-    "moment": {}
+    "moment": {},
+    "bootstrap3-datetimepicker": {}
   }
 }
