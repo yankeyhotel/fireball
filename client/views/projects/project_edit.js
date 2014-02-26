@@ -54,7 +54,7 @@ Template.projectEdit.events({
 			}
 		});
 
-		$('#project-modal').modal('hide')
+		$('#project-modal').modal('hide');
 
 	},
 

@@ -226,6 +226,7 @@ if (Clients.find().count() === 0) {
 		title: "Create New Contact Page",
 		assignedTo: matt._id,
 		status: 'active',
+		comments: 0
 	});
 
 	Tasks.insert ({
@@ -237,6 +238,7 @@ if (Clients.find().count() === 0) {
 		title: "Create New About Page",
 		assignedTo: matt._id,
 		status: 'active',
+		comments: 0
 	});
 
 
