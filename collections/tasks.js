@@ -6,8 +6,8 @@ Tasks.allow({
 });
 
 Tasks.deny({
-	update: function(userId, clientId, fieldNames) {
-		// may only edit the following two fields
+	update: function(userId, projectId, fieldNames) {
+		// may only edit the following fields
 		return (_.without(fieldNames, 'title', 'status', 'dueDate', 'assignedTo').length > 0);
 	}
 })

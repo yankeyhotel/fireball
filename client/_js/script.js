@@ -17,4 +17,9 @@ $(document).ready(function(){
 								oldClass = colorsArray[random];
 							}, 500);
 
+
+	if ($("#task-modal").length) {
+		
+	}
+
 });

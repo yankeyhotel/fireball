@@ -3,7 +3,9 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title"><b>{{user.profile.name}}</b> - {{user.profile.role}}</h3>
-			<a href="" class="btn btn-primary btn-xs add-task" data-toggle="modal" data-target="#task-modal" data-user="{{user._id}}"><span class="glyphicon glyphicon-plus"></span> Add a task</a>
+			<a href="" class="btn btn-primary btn-xs add-task" data-toggle="modal" data-target="#task-modal" data-user="{{user._id}}">
+				<span class="glyphicon glyphicon-plus"></span> Add a task
+			</a>
 		</div>
 		<div class="panel-body">
 			{{#each tasks}}

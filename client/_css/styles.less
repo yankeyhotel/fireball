@@ -229,10 +229,26 @@
 	.modal-sm,
 	.modal-md {
 		color: @text-color;
+		
+		.modal-header {
+			background-color: @body-bg;
+			color: #fff;
+			padding: 20px;
+			.close { 
+				color: #fff; 
+				text-shadow: 0 1px 0 #000;
+			}
+		}
+		
+		.btn {
+			width: 45%;
+		}
+
 		.help-block,
 		.control-label {
 			color: @text-color;
 		}
+
 	}
 
 	.bootstrap-datetimepicker-widget.dropdown-menu {
@@ -263,19 +279,24 @@
 					}
 				}
 				.checkbox {
-					border-top: 1px dashed lighten(@gray-light, 15%);
-					padding: 10px 20px 6px;
+					border-top: 1px solid @gray-lighter;
+					padding: 10px 20px;
 					position: relative;
-					margin-bottom: 10px;
+					margin: 0 !important;
+
 					&:first-child {
 						border-top: none;
-						margin-top: -10px;
+					}
+
+					.label {
+						position: relative;
+						top: -1px;
 					}
 
 					.btn-group {
 						position: absolute;
-							top: 11px;
-							right: 15px;
+							top: 10px;
+							right: 0;
 						.glyphicon-pencil { color: @brand-primary; }
 						.glyphicon-remove { color: @brand-danger; }
 						.btn {
@@ -283,6 +304,9 @@
 						}
 					}
 				}
+				
+				.checkbox + .checkbox { margin-top: 5px; }
+
 			}
 
 		}

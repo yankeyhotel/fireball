@@ -71,6 +71,15 @@
 	</section>
 
 
+	<section class="edit-task">
+		{{#if currentUser}}
+			{{> taskEdit}}
+		{{else}}
+			<p>Please log in to create a project</p>
+		{{/if}}
+	</section>
+
+
 	<section class="edit-project">
 		{{#if currentUser}}
 			{{> projectEdit}}

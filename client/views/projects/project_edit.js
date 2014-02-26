@@ -67,7 +67,7 @@ Template.projectEdit.events({
 			Router.go('clientPage', {_id: this.clientId});
 		}
 
-		$('#project-modal').modal('hide')
+		$('#project-modal').modal('hide');
 
 	}
 
