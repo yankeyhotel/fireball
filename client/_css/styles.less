@@ -259,9 +259,14 @@
 	/* ! Tasks */
 	/* ======================================================= */
 		.current-tasks {
-			.panel { color: @text-color; }
+			.panel { 
+				border: none;
+				color: @text-color; 
+			}
 
 			.panel-heading {
+				background-color: @text-color;
+				color: #fff;
 				position: relative;
 				.btn {
 					position: absolute;
@@ -303,19 +308,64 @@
 							padding: 1px 5px 0;
 						}
 					}
+					
+					&.checked,
+					&.archived { 
+						.opacity(.3); 
+					}
+
 				}
 				
 				.checkbox + .checkbox { margin-top: 5px; }
+				
+				&.collapse-body {
+					background-color: @off-white;
+					border-top: 4px solid @brand-danger;
+				}
 
-			}
+			}// .panel-body
 
-		}
+		}// .current-tasks
 
 		.task {
 			
 		}// .task
 	/* End Tasks ================================================ */
 
+
+
+
+	#me {
+		padding: 25px 0 100px;
+		
+		.current-tasks {
+			margin-top: 0px;
+			padding-right: 30px;
+
+			.panel-heading {
+				background-color: #27ae60;
+				color: #fff;
+			}
+		}
+
+		h1 { 
+			margin: 5px 0; 
+		}
+
+		h4 {
+			color: @blue;
+			font-weight: 800;
+			margin: 0 0 9px;
+			text-transform: uppercase;
+		}
+		
+		img { 
+			border: 10px solid #27ae60;
+			border-radius: 50% 50% 50% 0;
+			margin-top: 60px;
+			max-width: 100%;
+		}
+	}
 
 
 

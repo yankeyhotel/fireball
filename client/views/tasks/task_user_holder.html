@@ -12,7 +12,16 @@
 				{{> task}}
 			{{/each}}
 		</div>
-		<div class="panel-footer"><a href="">View Archived Tasks</a></div>
+		
+		<div id="archived_{{user._id}}" class="collapse">
+			<div class="panel-body collapse-body">
+				{{#each tasksArchived}}
+					{{> task}}
+				{{/each}}
+			</div>
+		</div>
+
+		<div class="panel-footer"><a href="" data-toggle="collapse" data-target="#archived_{{user._id}}">View Archived Tasks</a></div>
 	</div>
 
 </template>

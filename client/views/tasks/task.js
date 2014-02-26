@@ -25,6 +25,28 @@ Template.task.events ({
 			Tasks.remove(taskId);
 		}
 
+	},
+
+	'click input[type=checkbox]': function(e, template) {
+
+		$(e.target).parent().parent().parent().toggleClass("checked");
+
+		var currentTaskId = this._id;
+		var isChecked = $(e.target).prop('checked');
+
+		if (isChecked) {
+			var task = { status: "archived" };
+		} else {
+			var task = { status: "active" };
+		}
+		
+
+		Tasks.update(currentTaskId, {$set: task}, function(error) {
+			if (error) {
+				// display error to the user
+				Errors.throw(error.reason);
+			}
+		});
 	}
 
 });

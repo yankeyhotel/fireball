@@ -9,7 +9,13 @@ Template.taskUserHldr.helpers({
 	tasks: function() {
 		var userId = this.toString();
 		var projectId = Session.get('projectId');
-		return Tasks.find({assignedTo: userId, projectId: projectId});
+		return Tasks.find({assignedTo: userId, projectId: projectId, status: "active"}, {sort: {dueDate: 1}} );
+	},
+
+	tasksArchived: function() {
+		var userId = this.toString();
+		var projectId = Session.get('projectId');
+		return Tasks.find({assignedTo: userId, projectId: projectId, status: "archived"}, {sort: {dueDate: 1}} );
 	}
 
 });
