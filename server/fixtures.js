@@ -224,7 +224,6 @@ if (Clients.find().count() === 0) {
 		submitted: now - 5 * 3600 * 1000,
 		dueDate: now + 2 * 3600 * 1000,
 		title: "Create New Contact Page",
-		description: "Gothica quam nunc putamus parum claram anteposuerit litterarum formas humanitatis. Per seacula quarta decima et quinta, decima eodem modo typi qui nunc. Duis autem vel eum iriure dolor in hendrerit in. Qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
 		assignedTo: matt._id,
 		status: 'active',
 	});
@@ -236,7 +235,6 @@ if (Clients.find().count() === 0) {
 		submitted: now - 5 * 3600 * 1000,
 		dueDate: now + 1 * 3600 * 1000,
 		title: "Create New About Page",
-		description: "Gothica quam nunc putamus parum claram anteposuerit litterarum formas humanitatis. Per seacula quarta decima et quinta, decima eodem modo typi qui nunc. Duis autem vel eum iriure dolor in hendrerit in. Qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
 		assignedTo: matt._id,
 		status: 'active',
 	});

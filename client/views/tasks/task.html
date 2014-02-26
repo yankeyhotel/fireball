@@ -1,8 +1,12 @@
 <template name="task">
 
-	<article class="task client-item {{status}}">
-		<h1><a href="">{{title}}</a></h1>
-		<p><b>Created by:</b> {{author}} on {{formatDate MyISOString "short"}}</li></p>
-	</article>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox"> {{title}}
+			&ensp;<span class="label label-default dueDate">{{formatDate dueDate 'short'}}</span> 
+			&ensp;<span class="label label-info comments">0 Comments</span>
+		</label>
+		<a href="" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+	</div>
 
 </template>

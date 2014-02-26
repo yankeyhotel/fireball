@@ -42,3 +42,15 @@ Handlebars.registerHelper("userListById", function(items, options) {
 	out += "</ul>";
 	return out;
 });
+
+
+// Use a block helper to sort out user lists
+// http://handlebarsjs.com/
+Handlebars.registerHelper("userSelectById", function(items, options) {
+	var out = "";
+	for(var i=0, l=items.length; i<l; i++) {
+		var user = Meteor.users.findOne({_id: items[i]});
+		out = out + "<option value="+ user._id +">" + user.profile.name + "</option>";
+	}
+	return out;
+});

@@ -13,3 +13,8 @@ Meteor.publish('projectsPage', function (id) {
 Meteor.publish('allUsers', function() {
 	return Meteor.users.find();
 });
+
+
+Meteor.publish('tasks', function(projectId) {
+	return Tasks.find({projectId: projectId});
+});

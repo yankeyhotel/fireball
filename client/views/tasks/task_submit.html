@@ -1,0 +1,66 @@
+<template name="taskSubmit">
+	
+	<div id="task-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="mySmallModalLabel"><b>Add A Task</b></h4>
+				</div>
+
+				<div class="modal-body">
+					<form name="project" class="project-form">
+				
+						<div class="form-group">
+							<label for="title" class="control-label">Task Name</label>
+							<input type="text" class="form-control" id="title" name="title" placeholder="Task Name">
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Due Date</label>
+							<div class="input-group datetimepicker">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+								<input class="set-due-date form-control" type="text" name="dueDate" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="title" class="control-label">Assigned To</label>
+							<select class="form-control" id="task-user-select">
+								{{#userSelectById projectManagers}}{{/userSelectById}}
+								{{#userSelectById designers}}{{/userSelectById}}
+								{{#userSelectById webDevelopers}}{{/userSelectById}}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="title" class="control-label">Project Status</label>
+							<div class="radio">
+								<label>
+									<input type="radio" name="status" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
+									This project is <b>active</b>.
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="status" id="status-radio-2" value="archived" {{checked_eq status 'archived'}} >
+									This project is <b>archived</b>.
+								</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-success">Submit</button> &emsp;
+							<button type="button" class="btn btn-danger delete" data-dismiss="modal">Delete</button>
+						</div>
+
+					</form>
+				</div><!-- /modal-body -->
+
+			</div><!-- /modal-content -->
+		</div>
+	</div>
+
+</template>

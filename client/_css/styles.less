@@ -240,6 +240,55 @@
 	}
 
 
+	/* ! Tasks */
+	/* ======================================================= */
+		.current-tasks {
+			.panel { color: @text-color; }
+
+			.panel-heading {
+				position: relative;
+				.btn {
+					position: absolute;
+						top: 7px;
+						right: 15px;
+				}
+			}
+			
+			.panel-body {
+				.label {
+					font-weight: 100;
+					&.label-info {
+						background-color: @blue;
+						.opacity(.4);
+					}
+				}
+				.checkbox {
+					border-top: 1px dashed lighten(@gray-light, 15%);
+					padding: 10px 20px 6px;
+					position: relative;
+					margin-bottom: 10px;
+					&:first-child {
+						border-top: none;
+						margin-top: -10px;
+					}
+
+					.btn-primary {
+						padding: 1px 5px 0;
+						position: absolute;
+							top: 12px;
+							right: 0px;
+					}
+				}
+			}
+
+		}
+
+		.task {
+			
+		}// .task
+	/* End Tasks ================================================ */
+
+
 
 
 
