@@ -2,7 +2,6 @@ Template.projectEdit.rendered = function() {
 	$('.datetimepicker').datetimepicker();
 }
 
-
 Template.projectEdit.helpers({
 	userByRole: function (role) {
 		// role = "Project Manager";
