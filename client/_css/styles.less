@@ -9,43 +9,6 @@
 	/* Twitter Bootstrap 3.0.3 */
 	/* ======================================================= */
 	
-	/*
-	 * -------------------------	
-	 * Fonts
-	 * -------------------------
-	 * SANS-SERIF
-	 *	Gotham
-	 *		Light 	300*
-	 * 		Book 	400
-	 *		Medium	500*
-	 * 		Bold	700
-	 *
-	 * SERIF
-	 *	Adobe Garamond Pro
-	 *		Regular				400
-	 *		Semibold			600
-	 *
-	 * -------------------------
-	 * Colors
-	 * -------------------------
-	 * @gray-darker: 	lighten(#000, 13.5%); 	// #222
-	 * @gray-dark:      lighten(#000, 20%);   	// #333
-	 * @gray:           lighten(#000, 30%); 	// #4d4d4d
-	 * @gray-medium: 	lighten(#000, 50%); 	// #808080
-	 * @gray-light:     lighten(#000, 60%);   	// #999
-	 * @gray-lighter:   lighten(#000, 90%); 	// #e6e6e6
-	 *
-	 * @brand-primary:  #428bca;
-	 * @brand-success:  #5cb85c;
-	 * @brand-info:     #5bc0de;
-	 * @brand-warning:  #f0ad4e;
-	 * @brand-danger:   #d9534f;
-	 *
-	 * @red: 			#bf2525;
-	 * @red-bright: 	#c1221d;
-	 *
-	 */
-	
 	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);
 	@import "/packages/bootstrap3-less/bootstrap.lessimport";
 
@@ -76,9 +39,13 @@
 	/* ======================================================= */
 		.navbar {
 			.navbar-brand { font-weight: 800; }
+			.badge {
+				background-color: #fff;
+				color: @text-color;
+			}
 		}// .navbar
 		
-		#fireball {
+		.fireball {
 			.transition(color .5s ease-out);
 			&.yellow 	{ color: #f1c40f; }
 			&.orange 	{ color: #f39c12; }
@@ -87,7 +54,35 @@
 			&.alizarin 	{ color: #e74c3c; }
 			&.pomegranate { color: #c0392b; }
 		}
+		
+		#login-page {
+			text-align: center;
+			
+			#fireball-hldr {
+				background-color: @body-bg;
+				border: 8px solid @text-color;
+				border-radius: 50%;
+				.box-shadow(0 0 20px rgba(0,0,0,.5));
+				.square(200px);
+				margin: 60px auto 0;
+				.fireball {
+					font-size: 110px;
+					position: relative;
+						top: 39px;
+				}
+			}
 
+			h1 {
+				font-size: 80px;
+			}
+
+			p {
+				color: @blue;
+				font-size: 1.3em;
+				font-weight: 800;
+				text-transform: uppercase;
+			}
+		}
 
 	/* End Navbar ================================================ */
 
@@ -335,15 +330,35 @@
 
 
 
-	#me {
+	#me, #user {
 		padding: 25px 0 100px;
 		
+		&.silver {
+			.current-tasks .panel-heading { background-color: #bdc3c7; }
+			img { border-color: #bdc3c7; }
+		}
+
+		&.green {
+			.current-tasks .panel-heading { background-color: #27ae60; }
+			img { border-color: #27ae60; }
+		}
+
+		&.purple {
+			.current-tasks .panel-heading { background-color: #8e44ad; }
+			img { border-color: #8e44ad; }
+		}
+
+		&.red {
+			.current-tasks .panel-heading { background-color: #f1c40f; }
+			img { border-color: #f1c40f; }
+		}
+
 		.current-tasks {
 			margin-top: 0px;
 			padding-right: 30px;
 
 			.panel-heading {
-				background-color: #27ae60;
+				background-color: @brand-primary;
 				color: #fff;
 			}
 		}
@@ -360,7 +375,7 @@
 		}
 		
 		img { 
-			border: 10px solid #27ae60;
+			border: 10px solid @brand-primary;
 			border-radius: 50% 50% 50% 0;
 			margin-top: 60px;
 			max-width: 100%;

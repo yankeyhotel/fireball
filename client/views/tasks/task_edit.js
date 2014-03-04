@@ -12,8 +12,6 @@ Template.taskEdit.events ({
 
 		e.preventDefault();
 
-		console.log($(e.target).find('[name=title]').val());
-
 		var currentTaskId = $(e.target).find('[name=_id]').val();
 		var currentProjectId = this._id;
 

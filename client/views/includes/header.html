@@ -9,25 +9,30 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{pathFor 'me'}}"><span id="fireball" class="glyphicon glyphicon-fire"></span> Fireball</a>
+				<a class="navbar-brand" href="{{pathFor 'me'}}"><span class="fireball glyphicon glyphicon-fire"></span> Fireball</a>
 			</div>
 			<div class="collapse navbar-collapse">
+
+				{{#if currentUser}}
 				<ul class="nav navbar-nav">
+					<li class="dropdown">{{> usersNav}}</li>
 					<li class="dropdown">
 						<a href="{{pathFor 'clientsList'}}" class="dropdown-toggle" data-toggle="dropdown">Clients <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="{{pathFor 'clientsList'}}">View All Clients</a></li>
-							{{#if currentUser}}<li><a href="{{pathFor 'clientSubmit'}}">Add A Client</a></li>{{/if}}
-							<!-- <li class="divider"></li>
-							<li><a href="">Freezer</a></li> -->
+							<li><a href="{{pathFor 'clientSubmit'}}">Add A Client</a></li>
+							<li class="divider"></li>
+							<li><a href="">Freezer (NA)</a></li>
 						</ul>
 					</li>
 					<!-- <li><a href="">Everything</a></li> -->
 					<!-- <li><a href="">Rewards</a></li> -->
 				</ul>
+				{{/if}}
 
 				<ul class="nav navbar-nav navbar-right">
             		{{ loginButtons }}
+            		<li class="dropdown">{{> notifications}}</li>
             	</ul>
 			</div><!--/.nav-collapse -->
     	</div>

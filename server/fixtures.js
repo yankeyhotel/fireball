@@ -12,7 +12,9 @@ if (Clients.find().count() === 0) {
 		profile: {
 			name: 'Matt McClard',
 			role: 'Web Developer',
-			roleNickname: 'Nerd Commander'
+			roleNickname: 'Nerd Commander',
+			photo: 'self_portrait_matt.jpg',
+			color: 'green'
 		}
 	});
 	var matt = Meteor.users.findOne(mattId);
@@ -24,7 +26,9 @@ if (Clients.find().count() === 0) {
 		profile: {
 			name: 'Kelsey Wiley',
 			role: 'Project Manager',
-			roleNickname: 'Cat Wrangler'
+			roleNickname: 'Cat Wrangler',
+			photo: 'self_portrait_kelsey.jpg',
+			color: 'silver'
 		}
 	});
 	var kelsey = Meteor.users.findOne(kelseyId);
@@ -32,20 +36,30 @@ if (Clients.find().count() === 0) {
 
 	// Create Switch Elite
 	// ------------------------------------------------
-	var kimiId = Meteor.users.insert({
+	var kimiId = Accounts.createUser ({
+		username: "kimi",
+		email: "kimi@switch.is",
+		password: "Switch123",
 		profile: { 
 			name: 'Kimi Dallman',
 			role: 'Leadership',
-			roleNickname: 'Switch Elite' 
+			roleNickname: 'Switch Elite',
+			photo: 'self_portrait_kimi.jpg',
+			color: "red"
 		}
 	});
 	var kimi = Meteor.users.findOne(kimiId);
 
-	var glenId = Meteor.users.insert({
+	var glenId = Accounts.createUser ({
+		username: "glen",
+		email: "glen@switch.is",
+		password: "Switch123",
 		profile: { 
 			name: 'Glen Collins',
 			role: 'Leadership',
-			roleNickname: 'Switch Elite' 
+			roleNickname: 'Switch Elite',
+			photo: 'self_portrait_glen.jpg',
+			color: "purple"
 		}
 	});
 	var glen = Meteor.users.findOne(glenId);
@@ -57,7 +71,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Katie Coffee',
 			role: 'Project Manager',
-			roleNickname: 'Cat Wrangler' 
+			roleNickname: 'Cat Wrangler',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var katie = Meteor.users.findOne(katieId);
@@ -66,7 +81,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Melissa Mason',
 			role: 'Project Manager',
-			roleNickname: 'Cat Wrangler' 
+			roleNickname: 'Cat Wrangler',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var melissa = Meteor.users.findOne(melissaId);
@@ -78,7 +94,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Jamie Wilson',
 			role: 'Designer',
-			roleNickname: 'Pretentious Designer' 
+			roleNickname: 'Pretentious Designer',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var jamie = Meteor.users.findOne(jamieId);
@@ -87,7 +104,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Justin Childress',
 			role: 'Designer',
-			roleNickname: 'Pretentious Designer' 
+			roleNickname: 'Pretentious Designer',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var justin = Meteor.users.findOne(justinId);
@@ -96,7 +114,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Ashaun Eppes',
 			role: 'Designer',
-			roleNickname: 'Pretentious Designer' 
+			roleNickname: 'Pretentious Designer',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var ashaun = Meteor.users.findOne(ashaunId);
@@ -105,7 +124,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Molly Valdez',
 			role: 'Designer',
-			roleNickname: 'Pretentious Designer' 
+			roleNickname: 'Pretentious Designer',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var molly = Meteor.users.findOne(mollyId);
@@ -117,7 +137,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Boots Highland',
 			role: 'Web Developer',
-			roleNickname: 'Nerd Commander' 
+			roleNickname: 'Nerd Commander',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var boots = Meteor.users.findOne(bootsId);
@@ -126,7 +147,8 @@ if (Clients.find().count() === 0) {
 		profile: { 
 			name: 'Cameron Scroggins',
 			role: 'Web Developer',
-			roleNickname: 'Nerd Commander' 
+			roleNickname: 'Nerd Commander',
+			photo: 'self_portrait_gen.jpg' 
 		}
 	});
 	var cameron = Meteor.users.findOne(cameronId);
@@ -217,30 +239,53 @@ if (Clients.find().count() === 0) {
 
 	// Add Test Tasks
 	// ------------------------------------------------
-	Tasks.insert ({
-		projectId: stuffedWebId,
-		userId: kelsey._id,
-		author: kelsey.profile.name,
-		submitted: now - 5 * 3600 * 1000,
-		dueDate: now + 2 * 3600 * 1000,
-		title: "Create New Contact Page",
-		assignedTo: matt._id,
-		status: 'active',
-		comments: 0
-	});
 
-	Tasks.insert ({
-		projectId: stuffedWebId,
-		userId: kelsey._id,
-		author: kelsey.profile.name,
-		submitted: now - 5 * 3600 * 1000,
-		dueDate: now + 1 * 3600 * 1000,
-		title: "Create New About Page",
-		assignedTo: matt._id,
-		status: 'active',
-		comments: 0
-	});
+	var usersArray = new Array(
+								matt,
+								boots,
+								cameron,
+								kelsey,
+								melissa,
+								katie,
+								glen,
+								kimi,
+								jamie,
+								justin,
+								ashaun,
+								molly
+							);
 
+	var projectArray = new Array(stuffedEmailId, stuffedWebId);
 
+	var string = "Veniam Quis Nostrud Exerci Tation Ullamcorper Suscipit Lobortis Nisl Ut Aliquip Ex Ea Commodo Qui Nunc Nobis Videntur Parum Clari Fiant Sollemnes In Assum Typi Non Habent Claritatem Insitam Est Usus Per Seacula Quarta Decima Et Quinta Decima Eodem Modo Typi Mutationem Consuetudium Lectorum Mirum Est Notare Quam Littera Te Feugait Nulla Facilisi Nam Liber Tempor Cum Soluta Nobis Eleifend Option Congue Nihil Legunt Saepius Claritas Est Etiam Processus Dynamicus Qui Sequitur Gothica Quam Mazim Placerat Facer Possim Legentis In Iis Qui Facit Eorum Qui Blandit Praesent Luptatum Zzril Delenit Augue Duis Dolore Consectetuer Adipiscing Elit Sed Diam Nonummy Nibh Euismod Tincidunt Ut Laoreet Dolore Magna Aliquam Erat Volutpat";
+	var wordsArray = string.split(" ");
+
+	for (var i=0; i<100; i++) {
+
+		var randomUser = Math.floor(Math.random() * (usersArray.length - 1 + 1));
+		var randomProject = Math.floor(Math.random() * (projectArray.length - 1 + 1));
+
+		// find title
+		var randomTitleLength = Math.floor(Math.random() * (7 - 2 + 1)) + 2;
+		var title = "";    
+
+		for (var j=0; j<randomTitleLength; j++) {
+			var ran = Math.floor(Math.random() * wordsArray.length);
+			title += wordsArray[ran] + " ";
+		}
+
+		var task = Tasks.insert ({
+			projectId: projectArray[randomProject],
+			userId: kelsey._id,
+			author: kelsey.profile.name,
+			submitted: now - i * 3600 * 1000,
+			dueDate: now + (i+1) * 3600 * 1000,
+			title: title,
+			assignedTo: usersArray[randomUser]._id,
+			status: 'active',
+			comments: 0
+		});
+
+	}
 
 }

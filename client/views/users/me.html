@@ -1,0 +1,50 @@
+<template name="me">
+	
+	{{#if currentUser}}
+
+		<div id="me" class="row {{me.profile.color}}">
+			
+			<div class="col-sm-8">
+				
+				<section class="current-tasks">
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							<h3 class="panel-title">Here are your tasks. <b>Get to work minion!</b></h3>
+						</div>
+						
+						<div class="panel-body">
+							{{#each tasksActive}}
+								{{> task}}
+							{{/each}}
+						</div>
+
+						<div id="archived" class="collapse">
+							<div class="panel-body collapse-body">
+								{{#each tasksArchived}}
+									{{> task}}
+								{{/each}}
+							</div>
+						</div>
+
+						<div class="panel-footer"><a href="" data-toggle="collapse" data-target="#archived">View Archived Tasks</a></div>
+
+					</div>
+				</section>
+			
+			</div>
+
+			<div class="col-sm-4">
+				<img src="_img/{{me.profile.photo}}" alt="{{me.profile.name}}" />
+				<h1>{{me.profile.name}}</h1>
+				<h4>{{me.profile.roleNickname}}</h4>
+				<p><a href="mailto:{{me.emails.[0].address}}" class="btn btn-primary">Email Me!</a>
+			</div>
+
+		</div>
+
+	{{else}}
+		{{> loginPage}}
+	{{/if}}
+
+</template>

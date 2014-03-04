@@ -28,6 +28,11 @@ Meteor.publish('projectsAll', function () {
 });
 
 
-Meteor.publish('tasksByUser', function() {
-	return Tasks.find({userId: this.userId});
+Meteor.publish('tasksByUser', function(id) {
+	return Tasks.find({assignedTo: id});
+});
+
+
+Meteor.publish('notifications', function(){
+	return Notifications.find({userId: this.userId});
 });

@@ -1,6 +1,6 @@
-<template name="me">
+<template name="switcharoo">
 
-	<div id="me" class="row">
+	<div id="user" class="row {{profile.color}} id_{{_id}}">
 		
 		<div class="col-sm-8">
 			
@@ -33,10 +33,10 @@
 		</div>
 
 		<div class="col-sm-4">
-			<img src="_img/self_portrait.jpg" alt="{{user.profile.name}}" />
-			<h1>{{me.profile.name}}</h1>
-			<h4>{{me.profile.roleNickname}}</h4>
-			<p><a href="mailto:{{me.emails.[0].address}}" class="btn btn-primary">Email Me!</a>
+			<img src="/_img/{{profile.photo}}" alt="{{profile.name}}" />
+			<h1>{{profile.name}}</h1>
+			<h4>{{profile.roleNickname}}</h4>
+			<p><a href="mailto:{{emails.[0].address}}" class="btn btn-primary">Email Me!</a>
 		</div>
 
 	</div>

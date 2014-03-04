@@ -12,8 +12,8 @@ $(document).ready(function(){
 
 	var myVar = setInterval(function(){
 								var random = Math.floor((Math.random() * colorsArray.length));
-								$("#fireball").removeClass(oldClass);
-								$("#fireball").addClass(colorsArray[random]);
+								$(".fireball").removeClass(oldClass);
+								$(".fireball").addClass(colorsArray[random]);
 								oldClass = colorsArray[random];
 							}, 500);
 

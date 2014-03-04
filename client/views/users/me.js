@@ -5,6 +5,7 @@ Template.me.helpers({
 	},
 
 	tasksActive: function(){
+		// console.log( Tasks.find({status: "active", assignedTo: Meteor.userId()}).count() );
 		return Tasks.find({status: "active", assignedTo: Meteor.userId()}); 
 	},
 
@@ -13,4 +14,3 @@ Template.me.helpers({
 	},	
 
 });
-

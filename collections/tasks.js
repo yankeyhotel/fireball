@@ -1,8 +1,8 @@
 Tasks = new Meteor.Collection('tasks');
 
 Tasks.allow({
-	update: ownsDocument,
-	remove: ownsDocument
+	update: loggedIn,
+	remove: loggedIn
 });
 
 Tasks.deny({
@@ -47,7 +47,13 @@ Meteor.methods({
 
 		Projects.update(task.projectId, {$inc: {taskCount: 1}});
 
-		return Tasks.insert(task);
+		task._id = Tasks.insert(task);
+
+		// create notification
+		createTaskNotification(task);
+		return task._id;
+
+		// return Tasks.insert(task);
 
 	}
 });

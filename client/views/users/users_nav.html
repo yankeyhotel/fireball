@@ -1,0 +1,17 @@
+<template name="usersNav">
+	
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Switcharoos!<b class="caret"></b></a>
+	<ul class="switcharoos-list dropdown-menu">
+		{{#each users}}
+			{{> userListItem}}
+		{{/each}}
+	</ul>
+
+</template>
+
+
+<template name="userListItem">
+	<li>
+		<a href="{{pathFor 'switcharoo'}}">{{user.profile.name}}</a>
+	</li>
+</template> 

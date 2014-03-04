@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"re",
-				"relative"
+				"users",
+				"usersArray"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"bac",
+				"background"
 			],
 			[
 				"mar",
 				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"brand-",
+				"brand-danger"
+			],
+			[
+				"curre",
+				"currentTaskId"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"re",
+				"relative"
 			],
 			[
 				"bacl",
@@ -28,16 +60,8 @@
 				"padding-bottom"
 			],
 			[
-				"brand-",
-				"brand-primary"
-			],
-			[
 				"text",
 				"text-color"
-			],
-			[
-				"bac",
-				"background-color"
 			],
 			[
 				"padding",
@@ -96,10 +120,18 @@
 	"buffers":
 	[
 		{
-			"file": "client/_css/styles.less",
+			"file": "server/fixtures.js",
 			"settings":
 			{
-				"buffer_size": 5905,
+				"buffer_size": 7928,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "collections/tasks.js",
+			"settings":
+			{
+				"buffer_size": 1436,
 				"line_ending": "Unix"
 			}
 		}
@@ -156,64 +188,85 @@
 	},
 	"file_history":
 	[
-		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/variables.lessimport",
-		"/Users/yankeyhotel/Sites_meteor/fireball/server/fixtures.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/collections/tasks.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/header.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/users_nav.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/users_nav.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/_css/styles.less",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/notifications/notifications.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/lib/router.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/server/publications.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/switcharoo.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/switcharoo.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/me.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/collections/projects.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_submit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_edit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/handlebars_helpers.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_submit.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/lib/router.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/notifications/notifications.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/me.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/user_by_role.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/notifications.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/lib/permissions.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/server/fixtures.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/me.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/me.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/user_task_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/user_task_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/handlebars_helpers.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/_js/script.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/login_page.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/tasks.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/config.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/lib/config.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/README.md",
+		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/smart.json",
+		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/package.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/smart.lock",
+		"/Users/yankeyhotel/Sites_meteor/fireball/smart.json",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/clients.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access_denied.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_submit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/projects.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_submit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/lib/less/variables.lessimport",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/user_list.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/user_by_role.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/server/publications.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/collections/clients.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-datetimepicker/lib/css/bootstrap3-datetimepicker.min.css",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_edit.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_item.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/.meteor/local/build/programs/client/program.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/.meteor/local/build/programs/client/packages/meteor.js.map",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/_js/script.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/header.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/package.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/errors_tests.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/smart.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/loading.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access_denied.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/main.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/config.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/errors_list.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/errors_list.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/errors/errors.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/errors.html",
 		"/Users/yankeyhotel/Library/Application Support/Sublime Text 3/Packages/User/JS/console-log.sublime-snippet",
-		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/README.md",
 		"/Users/yankeyhotel/Sites_meteor/fireball/README.md",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access-denied.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/fireball.sublime-project",
@@ -228,8 +281,6 @@
 		"/Users/yankeyhotel/Sites_meteor/fireball/lib/app.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/smart.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/package.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/package.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/smart.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/smart.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap3-less/README.md",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-admin-ui-bootstrap-3/.build/browser/packages/accounts-admin-ui-bootstrap-3/style/style.css",
@@ -241,8 +292,6 @@
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap-themes/lib/less/bootstrap.lessimport",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/bootstrap-themes/lib/themes/flatly/flatly.lessimport",
-		"/Users/yankeyhotel/Sites_meteor/fireball/smart.lock",
-		"/Users/yankeyhotel/Sites_meteor/fireball/smart.json",
 		"/Users/yankeyhotel/Sites_meteor/fireball/npm-debug.log",
 		"/Users/yankeyhotel/Sites/Maggianos.com/Site/switch_system/config/config.env.php",
 		"/Users/yankeyhotel/Sites/Maggianos.com/Site/switch_system/config/config.dev.php",
@@ -266,24 +315,7 @@
 		"/Users/yankeyhotel/Sites/Switch_v6/.htaccess",
 		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/work.group/index.html",
 		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/about.group/hoffice.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/about.group/concerts.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/contact.group/index.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/site.group/_footer.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/site.group/index.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/less_switchv6/variables.less",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/js/script.js",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/site.group/_header.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/site.group/_document_header.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/js/fitvids.js",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/js/script-tumblr.js",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/js/script-tumblr-ck.js",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/js/tumblr.js",
-		"/Users/yankeyhotel/Sites/Switch_v6/zz_/zz_tumblr/theme-original.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/google8b8e6c07f92a7cc0.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/Switch_V6.sublime-project",
-		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/about.group/_subnav.html",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/less_switchv6/navbar.less",
-		"/Users/yankeyhotel/Sites/Switch_v6/assets/less_switchv6/mixins-switch.less"
+		"/Users/yankeyhotel/Sites/Switch_v6/switch_system/templates/default_site/about.group/concerts.html"
 	],
 	"find":
 	{
@@ -302,6 +334,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
+			"task-user-select",
+			");\n",
+			"task-user-select",
 			".modal-header",
 			"btn-danger",
 			"help-block",
@@ -359,30 +395,58 @@
 			[
 				{
 					"buffer": 0,
-					"file": "client/_css/styles.less",
+					"file": "server/fixtures.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5905,
+						"buffer_size": 7928,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5184,
-								5184
+								6034,
+								6034
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4289.0,
+						"translation.y": 3932.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "collections/tasks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1228,
+								1284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 217.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -444,7 +508,7 @@
 		[
 			[
 				"",
-				"~/Sites_meteor/todos/meteor-todos.sublime-project"
+				"~/Sites/GeoTag/geotag.sublime-project"
 			]
 		],
 		"width": 380.0
