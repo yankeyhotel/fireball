@@ -45,16 +45,16 @@
 			<div class="col-sm-8 col-sm-offset-1">
 				<section class="current-tasks">
 					{{#each projectManagers}}
-						{{> taskUserHldr}}
-					{{/each}}
-
-					{{#each designers}}
-						{{> taskUserHldr}}
-					{{/each}}
-
-					{{#each webDevelopers}}
-						{{> taskUserHldr}}
-					{{/each}}
+                        {{> taskUserHldr}}
+                    {{/each}}
+ 
+                    {{#each designers}}
+                        {{> taskUserHldr}}
+                    {{/each}}
+ 
+                    {{#each webDevelopers}}
+                        {{> taskUserHldr}}
+                    {{/each}}
 				</section>
 			</div>
 
@@ -64,19 +64,10 @@
 
 	<section class="add-task">
 		{{#if currentUser}}
-			{{> taskSubmit}}
-		{{else}}
-			<p>Please log in to create a project</p>
-		{{/if}}
-	</section>
-
-
-	<section class="edit-task">
-		{{#if currentUser}}
-			{{> taskEdit}}
-		{{else}}
-			<p>Please log in to create a project</p>
-		{{/if}}
+            {{> taskSubmit}}
+        {{else}}
+            <p>Please log in to create a project</p>
+        {{/if}}
 	</section>
 
 

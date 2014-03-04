@@ -1,9 +1,8 @@
-Template.taskEdit.rendered = function() {
-	$('#task-edit-modal').on('hidden.bs.modal', function () {
-		$(this).find('[name=title]').val("");
-		$(this).find('[name=dueDate]').val("");
-	});
-}
+Template.taskEdit.helpers({
+	getUserName: function(userId) {
+		return Meteor.users.findOne(userId).profile.name;
+	}
+});
 
 
 Template.taskEdit.events ({
@@ -12,8 +11,8 @@ Template.taskEdit.events ({
 
 		e.preventDefault();
 
-		var currentTaskId = $(e.target).find('[name=_id]').val();
-		var currentProjectId = this._id;
+		var currentTaskId = template.data._id;
+		var currentProjectId = Session.get("projectId");
 
 		var task = {
 			title: $(e.target).find('[name=title]').val(),
@@ -27,7 +26,7 @@ Template.taskEdit.events ({
 				// display error to the user
 				Errors.throw(error.reason);
 			} else {
-				$('#task-edit-modal').modal('hide');
+				$('#'+currentTaskId).modal('hide');
 			}
 		});
 
@@ -36,14 +35,14 @@ Template.taskEdit.events ({
 	'click .delete': function(e, template) {
 		e.preventDefault();
 
-		var taskId = $(e.target).parent().parent().find('input[name=_id]').val();
+		var taskId = template.data._id;
 		var taskTitle = $(e.target).parent().parent().find('input[name=title]').val();
 
 		if (confirm("Delete this task? \"" + taskTitle + "\"")) {
 			Tasks.remove(taskId);
 		}
 
-		$('#task-edit-modal').modal('hide');
+		$('#'+taskId).modal('hide');
 	}
 
 });

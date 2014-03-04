@@ -1,8 +1,12 @@
 Template.taskSubmit.rendered = function() {
+
 	$('#task-modal').on('hidden.bs.modal', function () {
 		$(this).find('[name=title]').val("");
 		$(this).find('[name=dueDate]').val("");
 	});
+
+	$('.datetimepicker').datetimepicker();
+	
 }
 
 

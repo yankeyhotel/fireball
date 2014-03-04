@@ -120,18 +120,26 @@
 	"buffers":
 	[
 		{
-			"file": "server/fixtures.js",
+			"file": "client/views/projects/project_page.html",
 			"settings":
 			{
-				"buffer_size": 7928,
+				"buffer_size": 1860,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "collections/tasks.js",
+			"file": "client/views/projects/project_page.js",
 			"settings":
 			{
-				"buffer_size": 1436,
+				"buffer_size": 469,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/views/projects/project_edit.js",
+			"settings":
+			{
+				"buffer_size": 1864,
 				"line_ending": "Unix"
 			}
 		}
@@ -188,6 +196,18 @@
 	},
 	"file_history":
 	[
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/collections/tasks.js",
+		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.html",
+		"/Users/yankeyhotel/Sites_meteor/fireball/server/fixtures.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/header.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/users_nav.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/users_nav.js",
@@ -198,33 +218,23 @@
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/switcharoo.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/switcharoo.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/me.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_page.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_page.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/notifications/notifications.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/users/me.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_edit.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/user_by_role.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/collections/notifications.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/lib/permissions.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/server/fixtures.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/me.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/me.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/user_task_edit.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/user/user_task_edit.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_edit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/handlebars_helpers.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/_js/script.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/login_page.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.html",
-		"/Users/yankeyhotel/Sites_meteor/fireball/collections/tasks.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/helpers/config.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/lib/config.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/README.md",
@@ -232,14 +242,12 @@
 		"/Users/yankeyhotel/Sites_meteor/fireball/packages/accounts-ui-bootstrap-3/package.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/smart.lock",
 		"/Users/yankeyhotel/Sites_meteor/fireball/smart.json",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_user_holder.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/clients_list.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/collections/clients.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/application/layout.js",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/includes/access_denied.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/clients/client_submit.js",
-		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/tasks/task_submit.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project_submit.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/client/views/projects/project.html",
 		"/Users/yankeyhotel/Sites_meteor/fireball/collections/projects.js",
@@ -390,52 +398,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/fixtures.js",
+					"file": "client/views/projects/project_page.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7928,
+						"buffer_size": 1860,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6034,
-								6034
+								1835,
+								1728
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3932.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "collections/tasks.js",
+					"file": "client/views/projects/project_page.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1436,
+						"buffer_size": 469,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1228,
-								1284
+								0,
+								0
 							]
 						],
 						"settings":
@@ -443,10 +451,38 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 217.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/views/projects/project_edit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1864,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								158,
+								158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -508,7 +544,11 @@
 		[
 			[
 				"",
-				"~/Sites/GeoTag/geotag.sublime-project"
+				"~/Sites_meteor/todos/meteor-todos.sublime-project"
+			],
+			[
+				"todo",
+				"~/Sites_meteor/todos/meteor-todos.sublime-project"
 			]
 		],
 		"width": 380.0
