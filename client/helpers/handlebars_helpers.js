@@ -17,7 +17,8 @@ Handlebars.registerHelper('checked_eq', function(x, y){
 var DateFormats = {
 		short: "MMM. DD, YYYY",
 		long: "dddd DD.MM.YYYY HH:mm",
-		datepicker: "MM/DD/YYYY hh:mm A"
+		datepicker: "MM/DD/YYYY hh:mm A",
+		datepickerLong: "MMM. DD, YYYY hh:mm A",
 };
 
 Handlebars.registerHelper("formatDate", function(datetime, format) {
