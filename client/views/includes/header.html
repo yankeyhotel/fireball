@@ -32,7 +32,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
             		{{ loginButtons }}
-            		<li class="dropdown">{{> notifications}}</li>
+            		{{#if currentUser}}<li class="dropdown">{{> notifications}}</li>{{/if}}
             	</ul>
 			</div><!--/.nav-collapse -->
     	</div>
