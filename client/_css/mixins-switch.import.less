@@ -1,0 +1,277 @@
+// FONTS
+// --------------------------------------------------
+
+#font {
+  #family {
+    .serif() {
+      font-family: @font-family-serif;
+    }
+    .sans-serif() {
+      font-family: @font-family-sans-serif;
+    }
+    .monospace() {
+      font-family: @font-family-monospace;
+    } 
+  }// #family
+  .shorthand(@size: @font-size-base, @weight: 400, @lineHeight: @line-height-base) {
+    font-size: @size;
+    font-weight: @weight;
+    line-height: @lineHeight;
+  }
+  .serif(@size: @font-size-base, @weight: 400, @lineHeight: @line-height-base) {
+    #font > #family > .serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .sans-serif(@size: @font-size-base, @weight: 400, @lineHeight: @line-height-base) {
+    #font > #family > .sans-serif;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+  .monospace(@size: @font-size-base, @weight: 400, @lineHeight: @line-height-base) {
+    #font > #family > .monospace;
+    #font > .shorthand(@size, @weight, @lineHeight);
+  }
+}
+
+
+// HTML5 BOILERPLATE MIXINS
+// --------------------------------------------------
+	
+	/* For image replacement */
+	.ir {
+		background-color: transparent;
+		background-repeat: no-repeat;
+		border: 0;
+		direction: ltr;
+		display: block;
+		overflow: hidden;
+		text-align: left;
+		text-indent: -999em;
+		}
+	.ir br { display: none; }
+	
+	/* Hide from both screenreaders and browsers: h5bp.com/u */
+	.hidden { 
+		display: none !important; 
+		visibility: hidden; 
+		}
+	
+	/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+	.visuallyhidden { 
+		border: 0; 
+		clip: rect(0 0 0 0); 
+		height: 1px; 
+		margin: -1px; 
+		overflow: hidden; 
+		padding: 0; 
+		position: absolute; 
+		width: 1px; }
+	
+	/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+	.visuallyhidden.focusable:active, 
+	.visuallyhidden.focusable:focus { 
+		clip: auto; 
+		height: auto; 
+		margin: 0; 
+		overflow: visible; 
+		position: static; 
+		width: auto; 
+		}
+	
+	/* Hide visually and from screenreaders, but maintain layout */
+	.invisible { visibility: hidden; }
+	
+	/* use .unstyled as a function */
+	.unstyled {
+  	margin-left: 0;
+  	list-style: none;
+		}
+		
+	.happyfont {
+		-webkit-font-smoothing: antialiased;
+	}
+	
+	.override_gradient_vertical() {
+	  background-color:transparent;
+	  background-image: none;
+	  background-image: none;
+	  background-image: none;
+	  background-image: none;
+	  background-image: none;
+	  background-image: none;
+	  background-repeat: no-repeat;
+	  filter: none;
+	}
+	
+	.background-cover {
+		background-position: center top;
+		-moz-background-size: cover;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	
+	// Vertical Align with display:tables
+	// http://css-tricks.com/centering-in-the-unknown
+	/* ======================================================= */
+	/*
+		Example markup
+		--------------------------------------------------------
+		
+		<div class="valign-hldr">
+		  	<div class="valign-table">
+		  		<div class="valign-cell">
+		  			<!-- Content can be anything -->
+		  				<h1>Boxer &amp; Street</h1>
+		  				<div class="logo_hldr"><img src="assets/img/header_logo.svg" alt="Boxer &amp; Street"></div>
+		  				<p>Premium, well-crafted apparel with a personal touch.</p>
+		  				<a href="#" class="btn btn-primary">View the Lookbook</a>
+		  		</div>
+		  	</div>
+	  	</div>
+  	
+  	--------------------------------------------------------
+	*/
+	.valign-hldr {
+		display: block;
+		height: 100%;
+		position: absolute;
+			top: 0;
+			left: 0;
+		width: 100%;
+	}
+	
+	.valign-table {
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.valign-cell {
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+	}
+	
+	
+	
+	/* ! Flexbox Mixins */
+	/* ======================================================= */
+	.flexit(@flex-dir) {
+		 display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		 display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		 display: -ms-flexbox;      /* TWEENER - IE 10 */
+		 display: -webkit-flex;     /* NEW - Chrome */
+		 display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			 -webkit-box-direction: normal;
+			-webkit-flex-direction: @flex-dir;
+			   -moz-flex-direction: @flex-dir;
+			    -ms-flex-direction: @flex-dir;
+			     -o-flex-direction: @flex-dir;	
+			        flex-direction: @flex-dir;
+	}
+	
+	.box-order(@box-order-number: 1) {
+		-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+	  	 -moz-box-flex: 1;      /* OLD - Firefox 19- */
+	  	  -webkit-flex: 1;      /* Chrome */
+	  	  		-ms-flex: 1;      /* IE 10 */
+	  	  				flex: 1;
+	  -webkit-box-ordinal-group: @box-order-number;   /* OLD - iOS 6-, Safari 3.1-6 */
+	  	 -moz-box-ordinal-group: @box-order-number;		/* OLD - Firefox 19- */
+	  	 				 -ms-flex-order: @box-order-number;		/* TWEENER - IE 10 */
+	  	 				 	-webkit-order: @box-order-number;		/* NEW - Chrome */
+	  	 				 					order: @box-order-number;
+	}
+
+
+
+	/* ! IE 6 Warning */
+	/* ======================================================= */	
+		
+		#_l { z-index: 10000; }
+		
+		#_d {
+			height: 280px !important;
+			padding-right: 0 !important;
+			width: 690px !important;
+			z-index: 100001;
+			ul {
+				margin: 0 !important;
+				padding: 0 !important;
+				li {
+					float: left !important;
+					&#_li5 { margin-right: 0 !important; }
+				}
+			}
+		}
+
+
+	/* ! IE Specific */
+	/* ======================================================= */	
+	.lt-ie8 {
+		
+	}
+	
+	
+	/* ! Browser Width */
+	/* ======================================================= */
+	#width {
+		.box-shadow(none);
+		border-color: transparent;
+		background-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		.opacity(1);
+		padding: .2em .5em;
+		position: fixed;
+			left: 10px;
+			bottom: 10px;
+		.transition(opacity .3s ease-out);
+		width: auto;
+		z-index: 9000;
+		
+		p {
+			color: #fff;
+			font-size: .9em;
+			margin: 0; 
+			padding: 0;
+			text-align: center;
+			&:after { display: none; }
+		}
+
+		&:hover {
+			.opacity(1);
+			p:after { display: inline-block; }
+		}
+		
+	}
+	
+	@media (max-width: (@screen-xs-min - 1) ) {
+		#width p:after {
+				content: " |  @screen-xs-min - 1 [<= 479px]";  
+		} 
+	}
+	
+	@media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {
+		#width p:after { 
+				content: " |  @screen-xs-min - @screen-xs-max [480px - 767px]";  
+		} 
+	}
+	
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    	#width p:after { 
+    		content: " |  @screen-sm-min - @screen-sm-max [768px - 991px]"; 
+    	}
+	}
+
+	@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+		#width p:after { 
+			content: " |  @screen-md-min - @screen-md-max [992px - 1199px]"; 
+		}
+	}
+
+	@media (min-width: @screen-lg-min) {
+		#width p:after {
+			content: " |  @screen-lg-min [> 1200px]"; 
+		}
+	}
+

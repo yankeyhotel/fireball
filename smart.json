@@ -5,6 +5,7 @@
     "spin": {},
     "accounts-ui-bootstrap-3": {},
     "moment": {},
-    "bootstrap3-datetimepicker": {}
+    "bootstrap3-datetimepicker": {},
+    "x-editable-bootstrap3": {}
   }
 }

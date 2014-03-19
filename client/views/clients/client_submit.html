@@ -13,7 +13,12 @@
 				<div class="form-group">
 					<span class="help-block">Client Liason</span>
 					{{#each projectManagers}}
-						{{> userList}}
+						<div class="radio">
+							<label>
+								<input type="radio" name="clientLiason" value="{{_id}}" {{checked_eq ../clientLiason _id }}> 
+								{{profile.name}}
+							</label>
+						</div>
 					{{/each}}
 				</div>
 

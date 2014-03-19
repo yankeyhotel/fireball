@@ -7,13 +7,14 @@
       "spin": {},
       "accounts-ui-bootstrap-3": {},
       "moment": {},
-      "bootstrap3-datetimepicker": {}
+      "bootstrap3-datetimepicker": {},
+      "x-editable-bootstrap3": {}
     },
     "packages": {
       "bootstrap3-less": {
         "git": "https://github.com/eprochasson/bootstrap3-less",
-        "tag": "v0.1.8",
-        "commit": "48b6db4435d9f01a1fcfe694a180b38e8e38835b"
+        "tag": "v0.1.9",
+        "commit": "5c812c4d7ce72917a065f0424c3cf54e5ff2d16a"
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
@@ -27,8 +28,8 @@
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.2.5",
-        "commit": "91cd37a1320213dd209c3a668bf542eeb9c39a00"
+        "tag": "v0.2.6",
+        "commit": "f3ee0ef6bc506314e19585550b4f9f5620c4ada6"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -39,6 +40,11 @@
         "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
         "tag": "v0.0.5",
         "commit": "30b5fa0759f98b75761772ad891876408f7cc8c4"
+      },
+      "x-editable-bootstrap3": {
+        "git": "https://github.com/JustinSGray/meteor-x-editable-bootstrap.git",
+        "tag": "v1.5.2",
+        "commit": "1e5e6d7bddf0b17cc6ea2fc1f50c3f9fd2cfc3f3"
       }
     }
   }
