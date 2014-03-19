@@ -2,7 +2,6 @@
 
 Template.clientEdit.helpers({
 	projectManagers: function () {
-		// console.log( Meteor.users.find({}, { fields: { 'profile.role': 1, _id: 0 } }).fetch() );
 		return Meteor.users.find({ "profile.role" : 'Project Manager' });
 	}
 });
