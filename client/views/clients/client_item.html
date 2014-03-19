@@ -4,9 +4,7 @@
 				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
 				<p>{{projectCount}} Active Projects | {{findClientLiason clientLiason}}</p>
 				{{#if currentUser}}
-					{{#if ownsPost }}
-						<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>
-					{{/if}}
+					<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>
 				{{/if}}
 			</div>
 		</div>
