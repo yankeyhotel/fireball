@@ -37,8 +37,12 @@
 				{{#userListById designers}}{{/userListById}}
 				<h5>Web Developers</h5>
 				{{#userListById webDevelopers}}{{/userListById}}
+
 				<h5>Project Description</h5>
 				<p>{{description}}</p>
+				
+				<p id="textArea" class="editable" data-type="textarea" data-placeholder="Enter text" data-emptytext="Click to enter text" data-rows="4">{{description}}</p>
+				
 
 			</div>
 

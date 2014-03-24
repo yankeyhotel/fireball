@@ -21,3 +21,14 @@ Template.projectPage.helpers({
 });
 
 
+Template.projectPage.rendered = function(template) {
+	$('#textArea.editable:not(.editable-click)').editable('destroy').editable({
+		success: function(response, newValue) {
+			console.log(response, newValue);		
+		}
+	});
+}
+
+// Template.projectEdit.rendered = function() {
+// 	$('.datetimepicker').datetimepicker();
+// }
