@@ -1,11 +1,21 @@
 	<template name="clientItem">
+
 		<div class="col-sm-12">
 			<div class="client-item {{status}}">
 				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
-				<p>{{projectCount}} Active Projects | {{findClientLiason clientLiason}}</p>
+				
+				<p>
+					<span class="{{status}}">{{status}}</span>
+					<span class="seperator">|</span> 
+					{{projectCount}} Projects
+					<span class="seperator">|</span>
+					{{findClientLiason clientLiason}}
+				</p>
+
 				{{#if currentUser}}
 					<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>
 				{{/if}}
 			</div>
 		</div>
+
 	</template>

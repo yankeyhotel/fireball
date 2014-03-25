@@ -1,7 +1,16 @@
-Meteor.publish('clients', function () {
-	return Clients.find();
+
+// Clients
+Meteor.publish('clientsActive', function () {
+	return Clients.find({status: "active"});
 });
 
+Meteor.publish('clientsArchived', function() {
+	return Clients.find({status: "archived"});
+})
+
+
+
+// To Do
 
 Meteor.publish('projects', function (clientId) {
 	return Projects.find({clientId: clientId});

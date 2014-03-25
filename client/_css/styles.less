@@ -142,10 +142,17 @@
 			}
 			
 			p { 
-				color: @blue;
+				color: @blue-light;
 				font-size: 12px;
 				font-weight: 400;
-				margin-bottom: 0; 
+				margin-bottom: 0;
+				span {
+					text-transform: capitalize;
+					&.active { color: @green-sea; }
+					&.archived { color: @brand-danger; }
+					&.seperator { color: @asbestos; }
+				}
+				
 			}
 
 			.btn {
@@ -160,16 +167,17 @@
 			&.project {
 
 			}
-			
+
+
 			&.archived {
 				border-bottom: 3px solid @navbar-inverse-bg;
 				&:hover { border-bottom: 3px solid @brand-danger; }
-				h1 { color: @body-bg; 
-					a { color: @body-bg; }
-				}
-				p {
-					color: @body-bg;
-				}
+				// h1 { color: @body-bg; 
+				// 	a { color: @body-bg; }
+				// }
+				// p {
+				// 	color: @body-bg;
+				// }
 			}
 
 		}// .client
