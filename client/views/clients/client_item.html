@@ -1,20 +1,28 @@
 	<template name="clientItem">
 
-		<div class="col-sm-12">
+		<div class="col-sm-4">
 			<div class="client-item {{status}}">
 				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
 				
-				<p>
-					<span class="{{status}}">{{status}}</span>
-					<span class="seperator">|</span> 
-					{{projectCount}} Projects
-					<span class="seperator">|</span>
-					{{findClientLiason clientLiason}}
-				</p>
-
 				{{#if currentUser}}
-					<a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-pencil"></span> Edit Client</a>
+					<p>
+						<span class="status-update editable {{status}}" data-type="select" data-pk="{{_id}}" data-name="status">{{status}}</span>
+						<span class="seperator">|</span> 
+						<span class="liason-update editable" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
+						<span class="seperator">|</span>
+						{{projectCount}} Projects
+					</p>
+				{{else}}
+					<p>
+						<span class="{{status}}">{{status}}</span>
+						<span class="seperator">|</span> 
+						<span class="">{{findClientLiason clientLiason}}</span>
+						<span class="seperator">|</span>
+						{{projectCount}} Projects
+					</p>
 				{{/if}}
+				
+
 			</div>
 		</div>
 

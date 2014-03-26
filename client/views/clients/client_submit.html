@@ -1,49 +1,61 @@
 <template name="clientSubmit">
-	
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h1>Add A Client</h1>
-			<form role="form">
+		
+	<div id="new-client-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
 
-				<div class="form-group">
-					<label for="title" class="control-label sr-only">Client Name</label>
-					<input type="text" class="form-control" id="title" name="title" placeholder="Client Name">
-				</div>
+			<div class="modal-content">
 				
-				<div class="form-group">
-					<span class="help-block">Client Liason</span>
-					{{#each projectManagers}}
-						<div class="radio">
-							<label>
-								<input type="radio" name="clientLiason" value="{{_id}}" {{checked_eq ../clientLiason _id }}> 
-								{{profile.name}}
-							</label>
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">Add A New Client</h4>
+				</div>
+
+				<div class="modal-body">
+					<form role="form">
+
+						<div class="form-group">
+							<label for="title" class="control-label sr-only">Client Name</label>
+							<input type="text" class="form-control" id="title" name="title" placeholder="Client Name">
 						</div>
-					{{/each}}
-				</div>
+						
+						<div class="form-group">
+							<span class="help-block">Client Liason</span>
+							{{#each projectManagers}}
+								<div class="radio">
+									<label>
+										<input type="radio" name="clientLiason" value="{{_id}}" {{checked_eq ../clientLiason _id }}> 
+										{{profile.name}}
+									</label>
+								</div>
+							{{/each}}
+						</div>
 
-				<div class="form-group">
-					<span class="help-block">Client Status</span>
-					<div class="radio">
-						<label>
-							<input type="radio" name="status" value="active" {{checked_eq status 'active'}}>
-							This client is <b>active</b>.
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="status" value="archived" {{checked_eq status 'archived'}}>
-							This client is <b>archived</b>.
-						</label>
-					</div>
-				</div>
-			
-				<div class="form-group">
-					<button type="submit" class="btn btn-success">Submit</button>
-				</div>
+						<div class="form-group">
+							<span class="help-block">Client Status</span>
+							<div class="radio">
+								<label>
+									<input type="radio" name="status" value="active" {{checked_eq status 'active'}}>
+									This client is <b>active</b>.
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="status" value="archived" {{checked_eq status 'archived'}}>
+									This client is <b>archived</b>.
+								</label>
+							</div>
+						</div>
+					
+						<div class="form-group">
+							<button type="submit" class="btn btn-success">Submit</button>
+						</div>
 
-			</form>
+					</form>
+				</div> <!-- /.modal-body -->
+
+			</div> <!-- /.modal-content -->
+
 		</div>
-	</div><!-- /row -->
+	</div><!-- /#new-client-modal -->
 
 </template>

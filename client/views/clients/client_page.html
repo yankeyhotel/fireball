@@ -1,36 +1,42 @@
 <template name="clientPage">
 
-	<header>
-		<h1>
-			{{title}}
+	<div id="client-page" class="row">
+
+		<header>
 			{{#if currentUser}}
-				{{#if ownsClient}}
-					<small><a href="{{pathFor 'clientEdit'}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a></small>
-				{{/if}}
-				<a href="{{pathFor 'projectSubmit'}}" class="btn btn-primary pull-right">Create a New Project</a>
+				<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title">{{title}}</span></h1>
+				<a href="{{pathFor 'projectSubmit'}}" id="btn-add-project" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add a Project</a>
+			{{else}}
+				<h1>{{title}}</h1>
 			{{/if}}
-		</h1>
-	</header>
+		</header>
 
 
-	<div class="row">
-		<div class="col-sm-3">
-			<ul class="meta list-unstyled">
-				<li><b>Liason:</b> {{findClientLiason clientLiason}}</li>
-				<li><b>Created by:</b> {{author}}</li>
-				<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
-				<li><b>Status:</b> {{status}}</li>
-				<li><b>Project Count:</b> {{projectCount}}</li>
-			</ul>
+		<div class="row">
+			
+			<div class="col-sm-3">
+				<ul class="meta list-unstyled">
+					<li>
+						<b>Liason:</b> 
+						<span class="liason-update editable" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
+					</li>
+					<li><b>Project Count:</b> {{projectCount}}</li>
+					<li><b>Status:</b> <span class="status-update editable {{status}}" data-type="select" data-pk="{{_id}}" data-name="status">{{status}}</span></li>
+					<li><b>Created by:</b> {{author}}</li>
+					<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
+				</ul>
+			</div>
+			
+			<div class="col-sm-9">
+				<section class="current-projects">
+					{{#each projects}}
+						{{> project}}
+					{{/each}}
+				</section>
+			</div>
+
 		</div>
 
-		<div class="col-sm-9">
-			<section class="current-projects">
-				{{#each projects}}
-					{{> project}}
-				{{/each}}
-			</section>
-		</div>
 	</div>
 
 </template>

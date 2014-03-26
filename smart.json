@@ -6,6 +6,7 @@
     "accounts-ui-bootstrap-3": {},
     "moment": {},
     "bootstrap3-datetimepicker": {},
-    "x-editable-bootstrap3": {}
+    "x-editable-bootstrap3": {},
+    "font-awesome-4-less": {}
   }
 }

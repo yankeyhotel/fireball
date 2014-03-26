@@ -1,7 +1,22 @@
 	<template name="clientsList">
+
 		<div id="clients-list" class="row">
+			
+			<div class="col-sm-12">
+				<header>
+					<h1>Active Clients</h1>
+					{{#if currentUser}}
+						<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-client-modal"><i class="fa fa-plus"></i> Add a Client</a>
+					{{/if}}
+				</header>
+			</div>
+			
 			{{#each clients}}
 				{{> clientItem}}
 			{{/each}}
+
 		</div>
+
+		{{> clientSubmit}}
+
 	</template>

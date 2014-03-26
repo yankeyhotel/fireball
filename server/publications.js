@@ -8,15 +8,19 @@ Meteor.publish('clientsArchived', function() {
 	return Clients.find({status: "archived"});
 })
 
+Meteor.publish('clientSingle', function(id) {
+	return Clients.find({_id: id});
+});
 
 
-// To Do
 
-Meteor.publish('projects', function (clientId) {
+// Projects
+Meteor.publish('projectsByClient', function (clientId) {
 	return Projects.find({clientId: clientId});
 });
 
 
+// To Do
 Meteor.publish('projectsPage', function (id) {
 	return Projects.find({_id: id});
 });

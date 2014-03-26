@@ -9,6 +9,7 @@
 @import "mixins-switch.import.less";
 @import "fireball-variables.import.less";
 @import "/packages/bootstrap3-less/bootstrap.import.less";
+@import "/packages/font-awesome-4-less/font-awesome.import.less";
 	
 	
 	/* ! Structure */
@@ -26,7 +27,13 @@
 		font-weight: 800;
 	}
 	
-	a { &:hover { text-decoration: none; } }
+	a { 
+		&:hover { text-decoration: none; } 
+	}
+
+	.editable-click {
+		border-bottom: 1px dotted @brand-success;
+	}
 
 	.modal-sm { 
 		color: @text-color;
@@ -112,7 +119,18 @@
 
 	/* ! Client */
 	/* ======================================================= */
-		#clients-list { margin-bottom: 50px; }
+		#clients-list { 
+			margin-bottom: 50px; 
+			
+			header {
+				position: relative;
+				.btn {
+					position: absolute;
+					top: 3px;
+					right: 0;
+				}
+			}
+		}// #clients-list
 
 		.client-item {
 			background-color: @navbar-inverse-bg;
@@ -146,17 +164,20 @@
 				font-size: 12px;
 				font-weight: 400;
 				margin-bottom: 0;
+
 				span {
 					text-transform: capitalize;
-					&.active { color: @green-sea; }
-					&.archived { color: @brand-danger; }
+					&.active 	{ color: @green-sea; }
+					&.archived 	{ color: @brand-danger; }
 					&.seperator { color: @asbestos; }
 				}
 				
 			}
 
-			.btn {
-				margin-top: -15px;
+			.fa-pencil-square-o  { 
+				color: @brand-primary; 
+				font-size: 2em;
+				margin-top: -9px;
 				position: absolute;
 					top: 50%;
 					right: 18px;
@@ -172,15 +193,40 @@
 			&.archived {
 				border-bottom: 3px solid @navbar-inverse-bg;
 				&:hover { border-bottom: 3px solid @brand-danger; }
-				// h1 { color: @body-bg; 
-				// 	a { color: @body-bg; }
-				// }
-				// p {
-				// 	color: @body-bg;
-				// }
 			}
 
 		}// .client
+
+
+		#client-page {
+
+			header {
+				position: relative;
+				#btn-add-project {
+					position: absolute;
+					top: 3px;
+					right: 0;
+				}
+			}// header
+			
+
+			.meta {
+				li { margin-bottom: 5px; }
+
+				b {
+					color: @blue;
+					text-transform: uppercase;
+				}
+
+				.status-update {
+					text-transform: capitalize;
+					&.active 	{ color: @green-sea; }
+					&.archived 	{ color: @brand-danger; }		
+				}
+
+			}// .meta
+
+		}
 	/* End Client ================================================ */
 	
 
@@ -210,15 +256,7 @@
 		margin-top: -10px;
 	}
 
-	.meta {
-		li {
-			margin-bottom: 5px;
-		}
-		b {
-			color: @blue;
-			text-transform: uppercase;
-		}
-	}
+	
 
 	.help-block,
 	.control-label {

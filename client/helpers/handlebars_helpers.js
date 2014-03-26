@@ -1,17 +1,4 @@
 
-// set the checked status on sets of radio buttons.
-// check the this.status against a string
-// i.e. {{checked_eq status 'active'}}
-Handlebars.registerHelper('checked_eq', function(x, y){
-	if (x === y){
-		return ' checked="checked"';
-	} else {
-		return '';
-	}
-});
-
-
-
 // use moment to format the date
 // http://stackoverflow.com/questions/18580495/format-a-date-from-inside-a-handlebars-template-in-meteor
 // use http://momentjs.com/docs/ to create more formats
@@ -56,3 +43,22 @@ Handlebars.registerHelper("userSelectById", function(items, options) {
 	}
 	return out;
 });
+
+
+
+// UNUSED --
+
+// set the checked status on sets of radio buttons.
+// check the this.status against a string
+// i.e. {{checked_eq status 'active'}}
+// -------------------------------------------------------
+// Handlebars.registerHelper('checked_eq', function(x, y){
+// 	if (x === y){
+// 		return ' checked="checked"';
+// 	} else {
+// 		return '';
+// 	}
+// });
+
+
+
