@@ -50,7 +50,7 @@ Template.projectSubmit.events ({
 			if (error) {
 				Errors.throw(error.reason);
 			} else {
-				Router.go('clientPage', {_id: template.data._id});
+				$('#new-project-modal').modal('hide');
 			}
 		});
 

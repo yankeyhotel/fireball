@@ -1,11 +1,11 @@
 <template name="clientPage">
 
-	<div id="client-page" class="row">
+	<div id="client-page">
 
 		<header>
 			{{#if currentUser}}
 				<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title">{{title}}</span></h1>
-				<a href="{{pathFor 'projectSubmit'}}" id="btn-add-project" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add a Project</a>
+				<a href="#" id="btn-add-project" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-project-modal" data-backdrop="static"><i class="fa fa-plus"></i> Add a Project</a>
 			{{else}}
 				<h1>{{title}}</h1>
 			{{/if}}
@@ -30,13 +30,16 @@
 			<div class="col-sm-9">
 				<section class="current-projects">
 					{{#each projects}}
-						{{> project}}
+						{{> projectItem}}
 					{{/each}}
 				</section>
 			</div>
 
-		</div>
+		</div><!-- /.row -->
 
-	</div>
+	</div><!-- /#client-page -->
+	
+
+	{{> projectSubmit}}
 
 </template>

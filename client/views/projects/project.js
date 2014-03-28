@@ -1,5 +1,0 @@
-Template.projectPage.helpers({
-
-
-
-});

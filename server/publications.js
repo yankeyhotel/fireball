@@ -1,5 +1,9 @@
 
 // Clients
+Meteor.publish('clients', function() {
+	return Clients.find();
+});
+
 Meteor.publish('clientsActive', function () {
 	return Clients.find({status: "active"});
 });
@@ -8,7 +12,7 @@ Meteor.publish('clientsArchived', function() {
 	return Clients.find({status: "archived"});
 })
 
-Meteor.publish('clientSingle', function(id) {
+Meteor.publish('clientsSingle', function(id) {
 	return Clients.find({_id: id});
 });
 
@@ -19,13 +23,14 @@ Meteor.publish('projectsByClient', function (clientId) {
 	return Projects.find({clientId: clientId});
 });
 
-
-// To Do
-Meteor.publish('projectsPage', function (id) {
+Meteor.publish('projectsSingle', function (id) {
 	return Projects.find({_id: id});
 });
 
 
+
+
+// To Do
 Meteor.publish('allUsers', function() {
 	return Meteor.users.find();
 });

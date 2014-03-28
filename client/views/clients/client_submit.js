@@ -29,6 +29,7 @@ Template.clientSubmit.events ({
 				}
 			} else {
 				Router.go('clientPage', {_id: id});
+				$('#new-client-modal').modal('hide');
 			}
 		});
 

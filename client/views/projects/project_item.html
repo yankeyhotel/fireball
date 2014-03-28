@@ -1,0 +1,11 @@
+<template name="projectItem">
+
+	<article class="project client-item {{status}}">
+		<h1><a href="{{pathFor 'projectPage'}}">{{title}}</a></h1>
+		<p>
+			<b>Due Date:</b> {{formatDate dueDate "short"}} <span class="seperator">|</span>
+			<b>Project Managers:</b> {{#each projectManagers}}{{getName this}}, {{/each}}
+		</p>
+	</article>
+
+</template>

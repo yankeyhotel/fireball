@@ -8,8 +8,8 @@ Template.projectPage.helpers({
 		return this.userId == Meteor.userId();
 	},
 
-	clientName: function(){
-		return Clients.findOne(this.clientId).title;
+	clientName: function(clientId){
+		return Clients.findOne({_id: clientId}).title;
 	},
 
 	projectProgress: function (totalTasks) {

@@ -1,5 +1,7 @@
 <template name="projectPage">
+
 	{{setSession}}
+
 	<header>
 		<h5><a href="/client/{{clientId}}">{{clientName clientId}}</a></h5>
 		<h1>
@@ -74,13 +76,5 @@
         {{/if}}
 	</section>
 
-
-	<section class="edit-project">
-		{{#if currentUser}}
-			{{> projectEdit}}
-		{{else}}
-			<p>Please log in to create a project</p>
-		{{/if}}
-	</section>
 
 </template>
