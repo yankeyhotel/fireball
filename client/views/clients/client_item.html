@@ -2,7 +2,14 @@
 
 		<div class="col-sm-4">
 			<div class="client-item {{status}}">
-				<h1><a href="{{pathFor 'clientPage'}}">{{title}}</a></h1>
+
+				<h1>
+					{{# if isClientActive status}}
+						<a href="{{pathFor 'clientPage'}}">{{title}}</a>
+					{{else}}
+						<a href="{{pathFor 'clientPageFreezer'}}">{{title}}</a>
+					{{/if}}
+				</h1>
 				
 				{{#if currentUser}}
 					<p>

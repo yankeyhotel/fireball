@@ -11,9 +11,18 @@ Template.clientItem.helpers({
 
 	findProjectManagers: function() {
 		return Meteor.users.find({ "profile.role" : 'Project Manager' })
+	},
+
+	isClientActive: function(status) {
+		if (status == "active") {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 });
+
 
 
 Template.clientItem.rendered = function(template) {

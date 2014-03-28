@@ -28,7 +28,3 @@ Template.projectPage.rendered = function(template) {
 		}
 	});
 }
-
-// Template.projectEdit.rendered = function() {
-// 	$('.datetimepicker').datetimepicker();
-// }

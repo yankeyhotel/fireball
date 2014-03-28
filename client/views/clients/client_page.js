@@ -11,13 +11,13 @@ Template.clientPage.helpers({
 	findClientLiason: function(clientLiason) {
 		var user = Meteor.users.findOne({_id: clientLiason});
 		return user.profile.name;
-	}
+	},
 
 });
 
 
 
-Template.clientPage.rendered = function(template) {
+Template.clientPage.rendered = function() {
 
 	// set up inline as defaule for x-editable
 	$.fn.editable.defaults.mode = 'inline';
