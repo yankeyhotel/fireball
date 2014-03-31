@@ -5,6 +5,7 @@
 var DateFormats = {
 		short: "MMM. DD, YYYY",
 		long: "dddd DD.MM.YYYY HH:mm",
+		combo: "DD-MM-YYYY h:mm a",
 		datepicker: "MM/DD/YYYY hh:mm A",
 		datepickerLong: "MMM. DD, YYYY hh:mm A",
 };
@@ -19,16 +20,7 @@ Handlebars.registerHelper("formatDate", function(datetime, format) {
 });
 
 
-// Use a block helper to sort out user lists
-// http://handlebarsjs.com/
-Handlebars.registerHelper("userSelectById", function(items, options) {
-	var out = "";
-	for(var i=0, l=items.length; i<l; i++) {
-		var user = Meteor.users.findOne({_id: items[i]});
-		out = out + "<option value="+ user._id +">" + user.profile.name + "</option>";
-	}
-	return out;
-});
+
 
 
 
@@ -56,6 +48,18 @@ Handlebars.registerHelper("userSelectById", function(items, options) {
 // 		out = out + "<li>" + user.profile.name + "</li>";
 // 	}
 // 	out += "</ul>";
+// 	return out;
+// });
+
+
+// Use a block helper to sort out user lists
+// http://handlebarsjs.com/
+// Handlebars.registerHelper("userSelectById", function(items, options) {
+// 	var out = "";
+// 	for(var i=0, l=items.length; i<l; i++) {
+// 		var user = Meteor.users.findOne({_id: items[i]});
+// 		out = out + "<option value="+ user._id +">" + user.profile.name + "</option>";
+// 	}
 // 	return out;
 // });
 

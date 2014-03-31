@@ -12,7 +12,7 @@ accounts-password
 accounts-ui-bootstrap-3
 errors
 moment
-bootstrap3-datetimepicker
 bootstrap3-less
 x-editable-bootstrap3
 font-awesome-4-less
+bootstrap3-datetimepicker

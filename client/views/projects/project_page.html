@@ -1,7 +1,5 @@
 <template name="projectPage">
 
-	{{setSession}}
-
 	<header>
 		<h5><a href="/client/{{clientId}}">{{clientName clientId}}</a></h5>
 		{{#if currentUser}}
@@ -24,8 +22,16 @@
 				</div>
 
 				<ul class="meta">
-					<li><b>Due Date:</b> {{formatDate submitted 'short'}}</li>
-					<li><b>Status:</b> <span class="status-update editable label label-{{status}}" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span></li>
+					<li>
+						<b>Due Date:</b>
+						<span class="dueDate-update editable" data-type="combodate" data-pk="{{_id}}" data-name="dueDate" data-value="{{formatDate dueDate 'combo'}}">
+							{{formatDate dueDate 'short'}}
+						</span>
+					</li>
+					<li>
+						<b>Status:</b> 
+						<span class="status-update editable label label-{{status}}" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span>
+					</li>
 					<li><b>Task Count:</b> {{taskCount}}</li>
 				</ul>
 
@@ -57,7 +63,7 @@
 				</p>
 
 				<h5>Project Description</h5>
-				<p class="small">{{description}}</p>
+				<p class="small"><span class="description-update editable" data-type="textarea" data-pk="{{_id}}" data-name="description" data-value="{{description}}">{{description}}</span></p>
 				
 				<h5>Project Generation</h5>
 				<p class="small">Created on {{formatDate submitted 'short'}} by {{author}}</p>

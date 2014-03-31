@@ -48,7 +48,16 @@
 	}
 
 	.editable { cursor: pointer; }
-	.editableform label { font-weight: 400 !important; }
+	.editableform { 
+	
+		label { font-weight: 400 !important; }
+		.combodate {
+			select {
+				.input-sm();
+				margin-bottom: 10px;
+			}
+		}
+	}
 
 	/* End Structure ========================================== */
 	
@@ -244,12 +253,14 @@
 			
 
 			.meta {
-				li { margin-bottom: 5px; }
+				margin-bottom: 40px;
+
+				li { margin-bottom: 10px; }
 
 				b {
 					color: @blue;
 					text-transform: uppercase;
-				}
+				}// b
 
 				.status-update {
 					border-bottom: none !important;
@@ -298,6 +309,8 @@
 				li {
 					color: #fff;
 					font-size: 1em;
+					margin-bottom: 14px;
+
 					b {
 						color: @blue;
 						font-weight: 800;
