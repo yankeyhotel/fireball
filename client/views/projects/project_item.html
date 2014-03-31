@@ -1,11 +1,24 @@
 <template name="projectItem">
+	
+	<div class="col-sm-6">
+		<article class="project client-item {{status}}">
+			
+			<h1><a href="{{pathFor 'projectPage'}}">{{title}}</a></h1>
 
-	<article class="project client-item {{status}}">
-		<h1><a href="{{pathFor 'projectPage'}}">{{title}}</a></h1>
-		<p>
-			<b>Due Date:</b> {{formatDate dueDate "short"}} <span class="seperator">|</span>
-			<b>Project Managers:</b> {{#each projectManagers}}{{getName this}}, {{/each}}
-		</p>
-	</article>
+			<div class="progress progress-striped active">
+				<div class="progress-bar progress-bar-info"  role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+					<span class="sr-only">60% Complete / Due on {{dueDate}}</span>
+				</div>
+			</div>
+			
+			<ul>
+				<li><b>Due Date:</b> {{formatDate dueDate "short"}}</li>
+				<li><b>Project Managers:</b> {{#each projectManagers}}<span class="name">{{getName this}}</span>{{/each}}</li>
+				<li><b>Designers:</b> {{#each designers}}<span class="name">{{getName this}}</span>{{/each}}</li>
+				<li><b>Developers:</b> {{#each webDevelopers}}<span class="name">{{getName this}}</span>{{/each}}</li>
+			</ul>
+
+		</article>
+	</div>
 
 </template>

@@ -19,20 +19,6 @@ Handlebars.registerHelper("formatDate", function(datetime, format) {
 });
 
 
-
-// Use a block helper to sort out user lists
-// http://handlebarsjs.com/
-Handlebars.registerHelper("userListById", function(items, options) {
-	var out = "<ul>";
-	for(var i=0, l=items.length; i<l; i++) {
-		var user = Meteor.users.findOne({_id: items[i]});
-		out = out + "<li>" + user.profile.name + "</li>";
-	}
-	out += "</ul>";
-	return out;
-});
-
-
 // Use a block helper to sort out user lists
 // http://handlebarsjs.com/
 Handlebars.registerHelper("userSelectById", function(items, options) {
@@ -58,6 +44,19 @@ Handlebars.registerHelper("userSelectById", function(items, options) {
 // 	} else {
 // 		return '';
 // 	}
+// });
+
+
+// Use a block helper to sort out user lists
+// http://handlebarsjs.com/
+// Handlebars.registerHelper("userListById", function(items, options) {
+// 	var out = "<ul>";
+// 	for(var i=0, l=items.length; i<l; i++) {
+// 		var user = Meteor.users.findOne({_id: items[i]});
+// 		out = out + "<li>" + user.profile.name + "</li>";
+// 	}
+// 	out += "</ul>";
+// 	return out;
 // });
 
 

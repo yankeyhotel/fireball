@@ -1,8 +1,11 @@
 Projects = new Meteor.Collection('projects');
 
 Projects.allow({
-	update: ownsDocument,
-	remove: ownsDocument
+	// TODO: use user roles to determine ability to edit clients
+	// not necessesarily connected to who created clients
+	// originally used ownsDocument in /lib/permissions.js
+	update: loggedIn,
+	remove: loggedIn
 });
 
 Projects.deny({

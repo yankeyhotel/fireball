@@ -35,11 +35,20 @@
 		border-bottom: 1px dotted @brand-success;
 	}
 
+	.label {
+		text-transform: capitalize;
+		&.label-active { .label-success(); }
+		&.label-archived { .label-success(); }
+	}
+
 	.modal-sm { 
 		color: @text-color;
 		width: 300px;
 		.modal-title { font-weight: 800; }
 	}
+
+	.editable { cursor: pointer; }
+	.editableform label { font-weight: 400 !important; }
 
 	/* End Structure ========================================== */
 	
@@ -187,7 +196,31 @@
 			// project
 			&.project {
 
-			}
+				.progress {
+					background-color: #ecf0f1;
+					border-radius: 0;
+					height: 6px;
+					margin: 4px 0 16px;
+				}
+
+				ul {
+					list-style: none;
+					margin: 0px 0 0 0;
+					padding: 0;
+				
+					li {
+						color: @concrete;
+						b {
+							color: @blue;
+							text-transform: uppercase;
+						}// b
+						.name:after { content: ', ' }
+						.name:last-child:after { content:'' }
+					}// li
+				
+				}// ul
+
+			}// &.project
 
 
 			&.archived {
@@ -219,14 +252,22 @@
 				}
 
 				.status-update {
+					border-bottom: none !important;
+					.label();
+					cursor: pointer;
 					text-transform: capitalize;
-					&.active 	{ color: @green-sea; }
-					&.archived 	{ color: @brand-danger; }		
+					&.active 	{ .label-success(); }
+					&.archived 	{ .label-danger(); }		
 				}
 
 			}// .meta
+			
+			.current-projects {
+				margin-bottom: 100px;
+				.col-sm-6:nth-child(odd) { clear: left; }
+			}
 
-		}
+		}// #client-page
 	/* End Client ================================================ */
 	
 
@@ -234,20 +275,38 @@
 	/* ! Project Info */
 	/* ======================================================= */
 		.project-info {
+
 			padding-bottom: 200px;
+
 			h5 {
 				color: @blue;
 				font-weight: 800;
 				margin-top: 20px;
 				text-transform: uppercase;
 			}
-			ul {
-				.list-unstyled();
-			}
-			
+
 			p {
-				font-size: 12px;
+				#font > .sans-serif(1em, @book, @line-height-base);
+				&.small { font-size: .857em; }
 			}
+
+			ul {
+				list-style: none;
+				margin: 0px 0 0 0;
+				padding: 0;
+			
+				li {
+					color: #fff;
+					font-size: 1em;
+					b {
+						color: @blue;
+						font-weight: 800;
+						text-transform: uppercase;
+					}// b
+				}// li
+			
+			}// ul
+
 		}// .project-info
 	/* End Project Info ================================================ */
 

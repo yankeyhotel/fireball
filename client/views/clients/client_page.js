@@ -5,7 +5,7 @@ Template.clientPage.helpers({
 	},
 
 	projects: function() {
-		return Projects.find({clientId: this._id});
+		return Projects.find({clientId: this._id}, {sort: {dueDate: 1}});
 	},
 
 	findClientLiason: function(clientLiason) {

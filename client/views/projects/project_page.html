@@ -4,14 +4,11 @@
 
 	<header>
 		<h5><a href="/client/{{clientId}}">{{clientName clientId}}</a></h5>
-		<h1>
-			{{title}}
-			{{#if currentUser}}
-				{{#if ownsProject}}
-					<small><a class="btn btn-primary btn-xs"  data-toggle="modal" data-target="#project-modal"><span class="glyphicon glyphicon-pencil"></span></a></small>
-				{{/if}}
-			{{/if}}
-		</h1>
+		{{#if currentUser}}
+			<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title" data-value="{{title}}">{{title}}</span></h1>
+		{{else}}
+			<h1>{{title}}</h1>
+		{{/if}}
 	</header>
 
 	<div class="project-info">
@@ -19,62 +16,63 @@
 
 			<div class="col-sm-3">
 
-				<p>{{projectProgress taskCount}}% Complete / Due on {{formatDate dueDate 'short'}}</p>
+				<p>{{projectProgress taskCount}}% Complete</p>
 				<div class="progress progress-striped active">
-					<div class="progress-bar progress-bar-info"  role="progressbar" aria-valuenow="{{projectProgress taskCount}}" aria-valuemin="0" aria-valuemax="100" style="width: {{projectProgress taskCount}}%">
+					<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{projectProgress taskCount}}" aria-valuemin="0" aria-valuemax="100" style="width: {{projectProgress taskCount}}%">
 						<span class="sr-only">{{projectProgress taskCount}}% Complete / Due on {{dueDate}}</span>
 					</div>
 				</div>
 
-				<ul class="meta list-unstyled">
-					<li><b>Created by:</b> {{author}}</li>
-					<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
-					<li><b>Status:</b> {{status}}</li>
+				<ul class="meta">
+					<li><b>Due Date:</b> {{formatDate submitted 'short'}}</li>
+					<li><b>Status:</b> <span class="status-update editable label label-{{status}}" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span></li>
 					<li><b>Task Count:</b> {{taskCount}}</li>
 				</ul>
 
 				<h5>Project Managers</h5>
-				{{#userListById projectManagers}}{{/userListById}}
+				<p>
+					<span class="pm-update editable" data-type="checklist" data-pk="{{_id}}" data-name="projectManagers" data-value="{{projectManagers}}">
+						{{#each projectManagers}}
+							{{getName this}}<br/>
+						{{/each}}
+					</span>
+				</p>
+
 				<h5>Designers</h5>
-				{{#userListById designers}}{{/userListById}}
+				<p>
+					<span class="d-update editable" data-type="checklist" data-pk="{{_id}}" data-name="designers" data-value="{{designers}}">
+						{{#each designers}}
+							{{getName this}}<br/>
+						{{/each}}
+					</span>
+				</p>
+
 				<h5>Web Developers</h5>
-				{{#userListById webDevelopers}}{{/userListById}}
+				<p>
+					<span class="wd-update editable" data-type="checklist" data-pk="{{_id}}" data-name="webDevelopers" data-value="{{webDevelopers}}">
+						{{#each webDevelopers}}
+							{{getName this}}<br/>
+						{{/each}}
+					</span>
+				</p>
 
 				<h5>Project Description</h5>
-				<p>{{description}}</p>
+				<p class="small">{{description}}</p>
 				
-				<p id="textArea" class="editable" data-type="textarea" data-placeholder="Enter text" data-emptytext="Click to enter text" data-rows="4">{{description}}</p>
-				
+				<h5>Project Generation</h5>
+				<p class="small">Created on {{formatDate submitted 'short'}} by {{author}}</p>
 
 			</div>
 
 			<div class="col-sm-8 col-sm-offset-1">
 				<section class="current-tasks">
-					{{#each projectManagers}}
-                        {{> taskUserHldr}}
-                    {{/each}}
- 
-                    {{#each designers}}
-                        {{> taskUserHldr}}
-                    {{/each}}
- 
-                    {{#each webDevelopers}}
-                        {{> taskUserHldr}}
-                    {{/each}}
+
 				</section>
 			</div>
 
 		</div>
 	</div>
 
-
-	<section class="add-task">
-		{{#if currentUser}}
-            {{> taskSubmit}}
-        {{else}}
-            <p>Please log in to create a project</p>
-        {{/if}}
-	</section>
 
 
 </template>
