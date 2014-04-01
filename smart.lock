@@ -9,7 +9,8 @@
       "moment": {},
       "bootstrap3-datetimepicker": {},
       "x-editable-bootstrap3": {},
-      "font-awesome-4-less": {}
+      "font-awesome-4-less": {},
+      "accounts-ui-bootstrap-3-blaze": {}
     },
     "packages": {
       "bootstrap3-less": {
@@ -19,8 +20,8 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.4",
-        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
+        "tag": "v0.7.0",
+        "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
@@ -29,8 +30,8 @@
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.2.6",
-        "commit": "f3ee0ef6bc506314e19585550b4f9f5620c4ada6"
+        "tag": "v0.3.0-1",
+        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
@@ -51,6 +52,16 @@
         "git": "https://github.com/svub/fontawesome4-less.git",
         "tag": "v4.3.7",
         "commit": "21f60350cd238fb7053132f42409a3090f76939e"
+      },
+      "accounts-ui-bootstrap-3-blaze": {
+        "git": "https://github.com/rajit/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.6",
+        "commit": "e8b1d1f9a2518dd91562f8096bd0831ae27e4e41"
+      },
+      "blaze-layout": {
+        "git": "https://github.com/EventedMind/blaze-layout.git",
+        "tag": "v0.2.2",
+        "commit": "8bc53798fe5965669ae67c72f91829fcfdceabfd"
       }
     }
   }

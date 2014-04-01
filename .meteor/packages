@@ -4,15 +4,14 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-preserve-inputs
 less
-iron-router
 spin
 accounts-password
-accounts-ui-bootstrap-3
 errors
 moment
 bootstrap3-less
 x-editable-bootstrap3
 font-awesome-4-less
 bootstrap3-datetimepicker
+iron-router
+accounts-ui-bootstrap-3-blaze

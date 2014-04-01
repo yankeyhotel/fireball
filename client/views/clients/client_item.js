@@ -5,8 +5,11 @@ Template.clientItem.helpers({
 	},
 
 	findClientLiason: function(clientLiason) {
-		var user = Meteor.users.findOne({_id: clientLiason});
-		return user.profile.name;
+		var user = Meteor.users.findOne(clientLiason);
+		if (user) {
+			return user.profile.name;
+		}
+		return "no data yet";
 	},
 
 	findProjectManagers: function() {

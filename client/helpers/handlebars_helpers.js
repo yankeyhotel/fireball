@@ -10,7 +10,7 @@ var DateFormats = {
 		datepickerLong: "MMM. DD, YYYY hh:mm A",
 };
 
-Handlebars.registerHelper("formatDate", function(datetime, format) {
+UI.registerHelper("formatDate", function(datetime, format) {
 	if (moment) {
 		f = DateFormats[format];
 		return moment(datetime).format(f);
@@ -19,6 +19,21 @@ Handlebars.registerHelper("formatDate", function(datetime, format) {
 	}
 });
 
+
+
+// find a client liason
+// UI.registerHelper("fClientLiason", function(clientLiason) {
+// 	var user = Meteor.users.findOne({_id: clientLiason});
+// 	console.log(user);
+// });
+
+
+// // find status
+// UI.registerHelper("statusQ", function(status) {
+// 	var status = status + " time";
+// 	console.log(status);
+// 	return status;
+// });
 
 
 
