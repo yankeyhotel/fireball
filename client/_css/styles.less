@@ -118,7 +118,7 @@
 	/* ! Header */
 	/* ======================================================= */
 		header {
-			border-bottom: 1px solid darken(@text-color, 10%);
+			border-bottom: 1px solid @blue-dark;
 			margin-bottom: 30px;
 			h1 { 
 				margin-top: 10px;
@@ -301,7 +301,7 @@
 				&.small { font-size: .857em; }
 			}
 
-			ul {
+			ul.meta {
 				list-style: none;
 				margin: 0px 0 0 0;
 				padding: 0;
@@ -319,6 +319,29 @@
 				}// li
 			
 			}// ul
+
+			.nav.nav-tabs {
+				border-bottom: 1px solid @blue;
+				> li {
+
+					&.active > a {
+						background-color: @blue;
+						border-color: @blue;
+						color: #fff;
+					}
+					
+					> a {
+						border-radius: 2px 2px 0 0;
+						color: @blue;
+						&:hover {
+							background-color: @blue;
+							border-color: @blue;
+							border-bottom: none;
+							color: @blue-dark;
+						}	
+					}// > a
+				}// > li
+			}// .nav.nav-tabs
 
 		}// .project-info
 	/* End Project Info ================================================ */

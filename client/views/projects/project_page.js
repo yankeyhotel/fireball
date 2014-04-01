@@ -4,6 +4,14 @@ Template.projectPage.helpers({
 		return this.userId == Meteor.userId();
 	},
 
+	activeUser: function(usrId) {
+		if ( usrId === Meteor.userId() ) {
+			return "active";
+		} else {
+			return "";
+		}
+	},
+
 	clientName: function(clientId){
 		return Clients.findOne({_id: clientId}).title;
 	},

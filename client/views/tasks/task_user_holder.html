@@ -1,27 +1,31 @@
 <template name="taskUserHldr">
 	
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title"><b>{{user.profile.name}}</b> - {{user.profile.role}}</h3>
-			<a href="" class="btn btn-primary btn-xs add-task" data-toggle="modal" data-target="#task-modal" data-user="{{user._id}}">
-				<span class="glyphicon glyphicon-plus"></span> Add a task
-			</a>
-		</div>
-		<div class="panel-body">
-			{{#each tasks}}
-				{{> task}}
-			{{/each}}
-		</div>
-		
-		<div id="archived_{{user._id}}" class="collapse">
-			<div class="panel-body collapse-body">
-				{{#each tasksArchived}}
+	<div class="tab-pane fade {{activeUser this}}" id="usr_{{user._id}}">
+	
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><b>{{user.profile.role}}</b></h3>
+				<a href="" class="btn btn-primary btn-xs add-task" data-toggle="modal" data-target="#task-modal" data-user="{{user._id}}">
+					<span class="glyphicon glyphicon-plus"></span> Add a task
+				</a>
+			</div>
+			<div class="panel-body">
+				{{#each tasks}}
 					{{> task}}
 				{{/each}}
 			</div>
-		</div>
+			
+			<div id="archived_{{user._id}}" class="collapse">
+				<div class="panel-body collapse-body">
+					{{#each tasksArchived}}
+						{{> task}}
+					{{/each}}
+				</div>
+			</div>
 
-		<div class="panel-footer"><a href="" data-toggle="collapse" data-target="#archived_{{user._id}}">View Archived Tasks</a></div>
+			<div class="panel-footer"><a href="" data-toggle="collapse" data-target="#archived_{{user._id}}">View Archived Tasks</a></div>
+		</div>
+	
 	</div>
 
 </template>

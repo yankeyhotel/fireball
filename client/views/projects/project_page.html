@@ -72,6 +72,30 @@
 
 			<div class="col-sm-8 col-sm-offset-1">
 				<section class="current-tasks">
+					
+					<ul class="nav nav-tabs">
+						{{#each projectManagers}}
+							<li class="{{activeUser this}}"><a data-target="#usr_{{this}}" data-toggle="tab">{{getName this}}</a></li>
+						{{/each}}
+						{{#each designers}}
+							<li class="{{activeUser this}}"><a data-target="#usr_{{this}}" data-toggle="tab">{{getName this}}</a></li>
+						{{/each}}
+						{{#each webDevelopers}}
+							<li class="{{activeUser this}}"><a data-target="#usr_{{this}}" data-toggle="tab">{{getName this}}</a></li>
+						{{/each}}
+					</ul>
+
+					<div class="tab-content">
+						{{#each projectManagers}}
+							{{> taskUserHldr}}
+						{{/each}}
+						{{#each designers}}
+							{{> taskUserHldr}}
+						{{/each}}
+						{{#each webDevelopers}}
+							{{> taskUserHldr}}
+						{{/each}}
+					</div>
 
 				</section>
 			</div>

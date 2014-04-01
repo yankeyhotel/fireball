@@ -6,16 +6,23 @@ Template.taskUserHldr.helpers({
 		return user;
 	},
 
+	activeUser: function(usrId) {
+		console.log(usrId, Meteor.userId());
+		if ( usrId === Meteor.userId() ) {
+			return "in active";
+		} else {
+			return "";
+		}
+	},
+
 	tasks: function() {
 		var userId = this.toString();
-		var projectId = Session.get('projectId');
-		return Tasks.find({assignedTo: userId, projectId: projectId, status: "active"}, {sort: {dueDate: 1}} );
+		return Tasks.find({assignedTo: userId, status: "active"}, {sort: {dueDate: 1}} );
 	},
 
 	tasksArchived: function() {
 		var userId = this.toString();
-		var projectId = Session.get('projectId');
-		return Tasks.find({assignedTo: userId, projectId: projectId, status: "archived"}, {sort: {dueDate: 1}} );
+		return Tasks.find({assignedTo: userId, status: "archived"}, {sort: {dueDate: 1}} );
 	}
 
 });

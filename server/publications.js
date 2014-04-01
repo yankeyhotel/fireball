@@ -1,5 +1,6 @@
 
 // Clients
+// --------------------------------------------------------------------------------
 Meteor.publish('clients', function() {
 	return Clients.find();
 });
@@ -19,6 +20,7 @@ Meteor.publish('clientsSingle', function(id) {
 
 
 // Projects
+// --------------------------------------------------------------------------------
 Meteor.publish('projectsByClient', function (clientId) {
 	return Projects.find({clientId: clientId});
 });
@@ -29,18 +31,32 @@ Meteor.publish('projectsSingle', function (id) {
 
 
 
+// Tasks
+// --------------------------------------------------------------------------------
+Meteor.publish('tasksByProject', function(projectId) {
+	return Tasks.find({projectId: projectId});
+});
 
-// To Do
+
+
+// Notifications
+// --------------------------------------------------------------------------------
+Meteor.publish('notifications', function(){
+	return Notifications.find({userId: this.userId});
+});
+
+
+
+// Users
+// --------------------------------------------------------------------------------
 Meteor.publish('allUsers', function() {
 	return Meteor.users.find();
 });
 
 
-Meteor.publish('tasks', function(projectId) {
-	return Tasks.find({projectId: projectId});
-});
 
 
+// To Do
 Meteor.publish('projectsAll', function () {
 	return Projects.find();
 });
@@ -51,6 +67,3 @@ Meteor.publish('tasksByUser', function(id) {
 });
 
 
-Meteor.publish('notifications', function(){
-	return Notifications.find({userId: this.userId});
-});
