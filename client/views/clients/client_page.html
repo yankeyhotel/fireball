@@ -3,30 +3,25 @@
 	<div id="client-page">
 
 		<header>
-			{{#if currentUser}}
-				<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title">{{title}}</span></h1>
-				<a href="#" id="btn-add-project" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-project-modal" data-backdrop="static"><i class="fa fa-plus"></i> Add a Project</a>
-			{{else}}
-				<h1>{{title}}</h1>
-			{{/if}}
+			<h1 id="ready">{{title}}</h1>
+			{{> clientPageTitleUpdate}}
+			<a href="#" id="btn-add-project" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-project-modal" data-backdrop="static"><i class="fa fa-plus"></i> Add a Project</a>
 		</header>
 
 
 		<div class="row">
 			
 			<div class="col-sm-3">
-				<ul class="meta list-unstyled">
-					<li>
-						<b>Liason:</b> 
-						<span class="liason-update editable" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
-					</li>
+				<ul class="meta list-unstyled manager">
+					<li><b>Liason:</b> {{> clientPageLiasonUpdate}}</li>
 					<li><b>Project Count:</b> {{projectCount}}</li>
-					<li><b>Status:</b> <span class="status-update editable {{status}}" data-type="select" data-pk="{{_id}}" data-name="status">{{status}}</span></li>
+					<li><b>Status:</b> {{> clientPageStatusUpdate}}</li>
 					<li><b>Created by:</b> {{author}}</li>
 					<li><b>Created On:</b> {{formatDate submitted 'short'}}</li>
 				</ul>
 				<p><a href="" class="btn btn-success">View Project Freezer</a></p>
 			</div>
+			
 			
 			<div class="col-sm-9">
 				<section class="current-projects">
@@ -39,8 +34,28 @@
 		</div><!-- /.row -->
 
 	</div><!-- /#client-page -->
-	
 
-	
+</template>
 
+
+<template name="clientPageTitleUpdate">
+	<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title" data-value="{{title}}">{{title}}</span></h1>
+</template>
+
+<template name="clientPageLiasonUpdate">
+	<span class="liason-update editable" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
+</template>
+
+<template name="clientPageStatusUpdate">
+	<span class="status-update editable {{status}}" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span>
+</template>
+
+
+<template name="notused">
+
+{{#each projects}}
+							{{> projectItem}}
+						{{/each}}
+
+	{{> projectSubmit}}
 </template>

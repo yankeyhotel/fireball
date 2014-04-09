@@ -21,22 +21,13 @@ UI.registerHelper("formatDate", function(datetime, format) {
 
 
 
-// find a client liason
-// UI.registerHelper("fClientLiason", function(clientLiason) {
-// 	var user = Meteor.users.findOne({_id: clientLiason});
-// 	console.log(user);
-// });
-
-
-// // find status
-// UI.registerHelper("statusQ", function(status) {
-// 	var status = status + " time";
-// 	console.log(status);
-// 	return status;
-// });
-
-
-
+UI.registerHelper("findClientLiason", function(clientLiason) {
+	var user = Meteor.users.findOne(clientLiason);
+	if (user) {
+		return user.profile.name;
+	}
+	return "no data yet";
+});
 
 
 // UNUSED --
