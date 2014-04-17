@@ -1,14 +1,32 @@
 Template.projectSubmit.rendered = function() {
-	$('.datetimepicker').datetimepicker();
+	$(".form_datetime").datetimepicker({
+		autoclose: true,
+		daysOfWeekDisabled: "0,6",
+        format: "MM d, yyyy hh:ii",
+        minuteStep: 15,
+        minView: 0,
+        showMeridian: true,
+        startDate: new Date(),
+    });
 }
 
 
 Template.projectSubmit.helpers({
+	
 	userByRole: function (role) {
-		// role = "Project Manager";
-		// console.log( Meteor.users.find({}, { fields: { 'profile.role': 1, _id: 0 } }).fetch() );
 		return Meteor.users.find({ "profile.role" : role });
+	},
+
+	setName: function(role) {
+		if (role == "Project Manager") {
+			return "projectManagers";
+		} else if (role == "Designer") {
+			return "designers";
+		} else if (role == "Web Developer") {
+			return "webDevelopers"
+		}
 	}
+
 });
 
 

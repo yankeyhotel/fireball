@@ -5,13 +5,12 @@
 
 standard-app-packages
 less
-spin
 accounts-password
 errors
 moment
 bootstrap3-less
 x-editable-bootstrap3
 font-awesome-4-less
-bootstrap3-datetimepicker
 iron-router
 accounts-ui-bootstrap-3-blaze
+iron-router-progress

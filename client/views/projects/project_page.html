@@ -3,7 +3,7 @@
 	<header>
 		<h5><a href="/client/{{clientId}}">{{clientName clientId}}</a></h5>
 		{{#if currentUser}}
-			<h1><span class="title-update editable" data-type="text" data-pk="{{_id}}" data-name="title" data-value="{{title}}">{{title}}</span></h1>
+			<h1><span class="title-update editable" data-title="Project Title" data-type="text" data-pk="{{_id}}" data-name="title" data-value="{{title}}">{{title}}</span></h1>
 		{{else}}
 			<h1>{{title}}</h1>
 		{{/if}}
@@ -24,20 +24,20 @@
 				<ul class="meta">
 					<li>
 						<b>Due Date:</b>
-						<span class="dueDate-update editable" data-type="combodate" data-pk="{{_id}}" data-name="dueDate" data-value="{{formatDate dueDate 'combo'}}">
+						<span class="dueDate-update editable" data-title="Project Due Date" data-type="datetime" data-pk="{{_id}}" data-name="dueDate" data-value="{{formatDate dueDate 'combo'}}">
 							{{formatDate dueDate 'short'}}
 						</span>
 					</li>
 					<li>
 						<b>Status:</b> 
-						<span class="status-update editable label label-{{status}}" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span>
+						<span class="status-update editable label label-{{status}}" data-title="Project Status" data-type="select" data-pk="{{_id}}" data-name="status" data-value="{{status}}">{{status}}</span>
 					</li>
 					<li><b>Task Count:</b> {{taskCount}}</li>
 				</ul>
 
 				<h5>Project Managers</h5>
 				<p>
-					<span class="pm-update editable" data-type="checklist" data-pk="{{_id}}" data-name="projectManagers" data-value="{{projectManagers}}">
+					<span class="pm-update editable" data-type="checklist" data-pk="{{_id}}" data-title="Project Managers" data-name="projectManagers" data-value="{{projectManagers}}">
 						{{#each projectManagers}}
 							{{getName this}}<br/>
 						{{/each}}
@@ -46,7 +46,7 @@
 
 				<h5>Designers</h5>
 				<p>
-					<span class="d-update editable" data-type="checklist" data-pk="{{_id}}" data-name="designers" data-value="{{designers}}">
+					<span class="d-update editable" data-type="checklist" data-pk="{{_id}}" data-title="Designers" data-name="designers" data-value="{{designers}}">
 						{{#each designers}}
 							{{getName this}}<br/>
 						{{/each}}
@@ -55,7 +55,7 @@
 
 				<h5>Web Developers</h5>
 				<p>
-					<span class="wd-update editable" data-type="checklist" data-pk="{{_id}}" data-name="webDevelopers" data-value="{{webDevelopers}}">
+					<span class="wd-update editable" data-type="checklist" data-pk="{{_id}}" data-title="Web Developers" data-name="webDevelopers" data-value="{{webDevelopers}}">
 						{{#each webDevelopers}}
 							{{getName this}}<br/>
 						{{/each}}
@@ -63,7 +63,7 @@
 				</p>
 
 				<h5>Project Description</h5>
-				<p class="small"><span class="description-update editable" data-type="textarea" data-pk="{{_id}}" data-name="description" data-value="{{description}}">{{description}}</span></p>
+				<p class="small"><span class="description-update editable" data-type="textarea" data-pk="{{_id}}" data-title="Project Description" data-name="description" data-value="{{description}}">{{description}}</span></p>
 				
 				<h5>Project Generation</h5>
 				<p class="small">Created on {{formatDate submitted 'short'}} by {{author}}</p>

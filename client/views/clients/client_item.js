@@ -31,32 +31,18 @@ Template.clientItem.helpers({
 Template.clientItem.rendered = function(template) {
 
 	// set up inline as defaule for x-editable
-	$.fn.editable.defaults.mode = 'inline';
-
-	// get project managers into an object for the select menu
-	projectManagersObject = function() {
-
-		var projectManagers = Meteor.users.find({ "profile.role" : 'Project Manager' }),
-			pmOptions		= new Object(),
-			count 			= 0;
-
-		projectManagers.forEach(function (usr) {
-			pmOptions[usr._id] = usr.profile.name;
-			count += 1;
-		});
-
-		return pmOptions;
-	}
+	$.fn.editable.defaults.placement 	= 'top';
+	$.fn.editable.defaults.mode 		= 'popup';
 
 
 	// set up .status-update
-	$(".status-update.editable:not(.editable-click)").editable('destroy').editable({
+	this.$(".status-update.editable:not(.editable-click)").editable('destroy').editable({
 		
 		url: 	"empty",
 		toggle: "dblclick",
 		
 		value: 	function() {
-			return $(this).closest("span").prev().text();
+			return $(this).closest(".popover").prev().text();
 		},
 		
 		source: [
@@ -78,14 +64,31 @@ Template.clientItem.rendered = function(template) {
 
 	});
 
+
+
+	// get project managers into an object for the select menu
+	projectManagersObject = function() {
+
+		var projectManagers = Meteor.users.find({ "profile.role" : 'Project Manager' }),
+			pmOptions		= new Object(),
+			count 			= 0;
+
+		projectManagers.forEach(function (usr) {
+			pmOptions[usr._id] = usr.profile.name;
+			count += 1;
+		});
+
+		return pmOptions;
+	}
+
 	// set up .liason-update
-	$(".liason-update.editable:not(.editable-click)").editable('destroy').editable({
+	this.$(".liason-update.editable:not(.editable-click)").editable('destroy').editable({
 		
 		url: 	"empty",
 		toggle: "dblclick",
 		
 		value: 	function() {
-			return $(this).closest("span").prev().data("pmid");
+			return $(this).closest(".popover").prev().data("pmid");
 		},
 
 		source: projectManagersObject,

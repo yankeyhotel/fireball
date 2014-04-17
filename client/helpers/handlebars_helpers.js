@@ -19,8 +19,6 @@ UI.registerHelper("formatDate", function(datetime, format) {
 	}
 });
 
-
-
 UI.registerHelper("findClientLiason", function(clientLiason) {
 	var user = Meteor.users.findOne(clientLiason);
 	if (user) {

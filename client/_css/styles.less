@@ -4,60 +4,120 @@
  * designed by Switch Creative
  * http://switch.is
 */
+	
+	/* ! Imports */
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);
+	@import "mixins-switch.import.less";
+	@import "fireball-variables.import.less";
+	@import "/packages/bootstrap3-less/bootstrap.import.less";
+	@import "/packages/font-awesome-4-less/font-awesome.import.less";
+	@import "datetimepicker.import.less";
+	
+	
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);
-@import "mixins-switch.import.less";
-@import "fireball-variables.import.less";
-@import "/packages/bootstrap3-less/bootstrap.import.less";
-@import "/packages/font-awesome-4-less/font-awesome.import.less";
-	
-	
 	/* ! Structure */
 	/* Twitter Bootstrap 3.0.3 */
 	/* ======================================================= */
-
-	.btn-blue { .button-variant(#fff, @blue, @blue); }
-
-	body {
-		color: #fff;
-		padding-top: 65px;
-	}
-
-	h1 {
-		font-weight: 800;
-	}
-	
-	a { 
-		&:hover { text-decoration: none; } 
-	}
-
-	.editable-click {
-		border-bottom: 1px dotted @brand-success;
-	}
-
-	.label {
-		text-transform: capitalize;
-		&.label-active { .label-success(); }
-		&.label-archived { .label-success(); }
-	}
-
-	.modal-sm { 
-		color: @text-color;
-		width: 300px;
-		.modal-title { font-weight: 800; }
-	}
-
-	.editable { cursor: pointer; }
-	.editableform { 
-	
-		label { font-weight: 400 !important; }
-		.combodate {
-			select {
-				.input-sm();
-				margin-bottom: 10px;
-			}
+		body {
+			color: #fff;
+			padding-top: 65px;
 		}
-	}
+
+		.btn-blue { .button-variant(#fff, @blue, @blue); }
+
+		h1 { font-weight: 800; }
+		
+		a:hover { text-decoration: none; }
+		
+
+	/* Bootstrap Components
+	---------------------------------------------------- */
+		#iron-router-progress {
+			background-color: @brand-success;
+			box-shadow: 0 0 5px rgba(0,0,0,.4);
+		}
+
+		.label {
+			text-transform: capitalize;
+			&.label-active { .label-success(); }
+			&.label-archived { .label-success(); }
+		}
+
+		.modal-sm { 
+			width: 300px;
+		}
+
+		.modal-sm,
+		.modal-md {
+			color: @text-color;
+			
+			.modal-title { font-weight: 800; }
+
+			.modal-header {
+				background-color: @body-bg;
+				color: #fff;
+				padding: 20px;
+				.close { 
+					color: #fff; 
+					text-shadow: 0 1px 0 #000;
+				}
+			}
+			
+			.btn { width: 48%; }
+
+			.help-block,
+			.control-label {
+				color: @text-color;
+			}
+
+		}// .modal-sm, .modal-md
+		
+
+		/* X-Editable Forms
+		---------------------------------------------------- */
+		.editable { cursor: pointer; }
+		
+		.editable-click { border-bottom: 1px dotted @brand-success; }
+
+		.editableform { 
+		
+			label { 
+				color: @text-color;
+				font-weight: 400 !important; 
+			}// label
+			
+			.form-control { font-weight: 400; }
+			
+		}// .editable
+		
+		.bootstrap-datetimepicker-widget.dropdown-menu {
+			color: @text-color;
+		}
+
+		.popover {
+			border-radius: 0;
+			padding: 0;
+			&.right { margin-left: 15px; }
+
+			.popover-title {
+				background-color: @blue;
+				border-bottom: none;
+				border-radius: 0;
+				color: #fff;
+				font-weight: @bold;
+			}
+		}// .popover
+
+		.help-block,
+		.control-label {
+			color: @blue;
+			font-weight: 800;
+			text-transform: uppercase;
+		}// .help-block, .control-label
+
+		.control-label + .radio {
+			margin-top: -2px;
+		}// .control-label + .radio
 
 	/* End Structure ========================================== */
 	
@@ -81,7 +141,13 @@
 			&.alizarin 	{ color: #e74c3c; }
 			&.pomegranate { color: #c0392b; }
 		}
-		
+
+	/* End Navbar ================================================ */
+	
+
+
+	/* ! Login Page */
+	/* ======================================================= */
 		#login-page {
 			text-align: center;
 			
@@ -97,21 +163,19 @@
 					position: relative;
 						top: 39px;
 				}
-			}
+			}// ##fireball-hldr
 
-			h1 {
-				font-size: 80px;
-			}
+			h1 { font-size: 80px; }
 
 			p {
 				color: @blue;
 				font-size: 1.3em;
 				font-weight: 800;
 				text-transform: uppercase;
-			}
-		}
+			}// p
 
-	/* End Navbar ================================================ */
+		}// #login-page
+	/* End Login Page ================================================ */
 
 
 	
@@ -135,6 +199,7 @@
 	/* End Header ================================================ */		
 	
 
+
 	/* ! Client */
 	/* ======================================================= */
 		#clients-list { 
@@ -147,13 +212,12 @@
 					top: 3px;
 					right: 0;
 				}
-			}
+			}// header
 		}// #clients-list
 
 		.client-item {
 			background-color: @navbar-inverse-bg;
 			border-bottom: 3px solid @navbar-inverse-bg;
-			// border: 1px solid darken(@navbar-inverse-bg, 10%);
 			border-radius: 0;
 			margin: 10px 0;
 			padding: 15px;
@@ -174,8 +238,8 @@
 					color: #fff;
 					.transition(color .3s ease-out); 
 					&:hover { color: @brand-primary; }
-				}
-			}
+				} // a
+			}// h1
 			
 			p { 
 				color: @blue-light;
@@ -190,7 +254,8 @@
 					&.seperator { color: @asbestos; }
 				}
 				
-			}
+			}// p
+
 
 			.fa-pencil-square-o  { 
 				color: @brand-primary; 
@@ -199,38 +264,7 @@
 				position: absolute;
 					top: 50%;
 					right: 18px;
-			}
-
-
-			// project
-			&.project {
-
-				.progress {
-					background-color: #ecf0f1;
-					border-radius: 0;
-					height: 6px;
-					margin: 4px 0 16px;
-				}
-
-				ul {
-					list-style: none;
-					margin: 0px 0 0 0;
-					padding: 0;
-				
-					li {
-						color: @concrete;
-						b {
-							color: @blue;
-							text-transform: uppercase;
-						}// b
-						.name:after { content: ', ' }
-						.name:last-child:after { content:'' }
-					}// li
-				
-				}// ul
-
-			}// &.project
-
+			}// .fa-pencil-square-o
 
 			&.archived {
 				border-bottom: 3px solid @navbar-inverse-bg;
@@ -274,7 +308,7 @@
 			}// .meta
 			
 			.current-projects {
-				margin-bottom: 100px;
+				margin: -10px 0 100px;
 				.col-sm-6:nth-child(odd) { clear: left; }
 			}
 
@@ -285,6 +319,34 @@
 
 	/* ! Project Info */
 	/* ======================================================= */
+		.project {
+
+			.progress {
+				background-color: #ecf0f1;
+				border-radius: 0;
+				height: 6px;
+				margin: 4px 0 16px;
+			}
+
+			ul {
+				list-style: none;
+				margin: 0px 0 0 0;
+				padding: 0;
+			
+				li {
+					color: @concrete;
+					b {
+						color: @blue;
+						text-transform: uppercase;
+					}// b
+					.name:after { content: ', ' }
+					.name:last-child:after { content:'' }
+				}// li
+			
+			}// ul
+
+		}// &.project
+
 		.project-info {
 
 			padding-bottom: 200px;
@@ -318,12 +380,13 @@
 					}// b
 				}// li
 			
-			}// ul
+			}// ul.meta
 
 			.nav.nav-tabs {
 				border-bottom: 1px solid @blue;
 				> li {
-
+					cursor: pointer;
+					
 					&.active > a {
 						background-color: @blue;
 						border-color: @blue;
@@ -344,54 +407,8 @@
 			}// .nav.nav-tabs
 
 		}// .project-info
-	/* End Project Info ================================================ */
-
+	/* End Project Info ================================================ */	
 	
-	.current-projects {
-		margin-top: -10px;
-	}
-
-	
-
-	.help-block,
-	.control-label {
-		color: @blue;
-		font-weight: 800;
-		text-transform: uppercase;
-	}
-
-	.control-label + .radio {
-		margin-top: -2px;
-	}
-
-	.modal-sm,
-	.modal-md {
-		color: @text-color;
-		
-		.modal-header {
-			background-color: @body-bg;
-			color: #fff;
-			padding: 20px;
-			.close { 
-				color: #fff; 
-				text-shadow: 0 1px 0 #000;
-			}
-		}
-		
-		.btn {
-			width: 48%;
-		}
-
-		.help-block,
-		.control-label {
-			color: @text-color;
-		}
-
-	}
-
-	.bootstrap-datetimepicker-widget.dropdown-menu {
-		color: @text-color;
-	}
 
 
 	/* ! Tasks */
@@ -414,6 +431,7 @@
 			}
 			
 			.panel-body {
+				
 				.label {
 					font-weight: 100;
 					&.label-info {
@@ -421,6 +439,7 @@
 						.opacity(.4);
 					}
 				}
+
 				.checkbox {
 					border-top: 1px solid @gray-lighter;
 					padding: 10px 20px;
@@ -465,73 +484,71 @@
 
 		}// .current-tasks
 
-		.task {
-			
-		}// .task
 	/* End Tasks ================================================ */
 
 
 
-
-	#me, #user {
-		padding: 25px 0 100px;
-		
-		&.silver {
-			.current-tasks .panel-heading { background-color: #bdc3c7; }
-			img { border-color: #bdc3c7; }
-		}
-
-		&.green {
-			.current-tasks .panel-heading { background-color: #27ae60; }
-			img { border-color: #27ae60; }
-		}
-
-		&.purple {
-			.current-tasks .panel-heading { background-color: #8e44ad; }
-			img { border-color: #8e44ad; }
-		}
-
-		&.red {
-			.current-tasks .panel-heading { background-color: #f1c40f; }
-			img { border-color: #f1c40f; }
-		}
-
-		.current-tasks {
-			margin-top: 0px;
-			padding-right: 30px;
-
-			.panel-heading {
-				background-color: @brand-primary;
-				color: #fff;
+	/* ! Users */
+	/* ======================================================= */	
+		#me, #user {
+			padding: 25px 0 100px;
+			
+			&.silver {
+				.current-tasks .panel-heading { background-color: #bdc3c7; }
+				img { border-color: #bdc3c7; }
 			}
-		}
 
-		h1 { 
-			margin: 5px 0; 
-		}
-		
-		h4 {
-			color: @blue;
-			font-weight: 800;
-			margin: 0 0 9px;
-			text-transform: uppercase;
-		}
-		
-		img { 
-			border: 10px solid @brand-primary;
-			border-radius: 50% 50% 50% 0;
-			margin-top: 60px;
-			max-width: 100%;
-		}
-		
-		.modal h4 {
-			color: #fff;
-			text-transform: none;
-		}
+			&.green {
+				.current-tasks .panel-heading { background-color: #27ae60; }
+				img { border-color: #27ae60; }
+			}
+
+			&.purple {
+				.current-tasks .panel-heading { background-color: #8e44ad; }
+				img { border-color: #8e44ad; }
+			}
+
+			&.red {
+				.current-tasks .panel-heading { background-color: #f1c40f; }
+				img { border-color: #f1c40f; }
+			}
+
+			.current-tasks {
+				margin-top: 0px;
+				padding-right: 30px;
+
+				.panel-heading {
+					background-color: @brand-primary;
+					color: #fff;
+				}
+			}
+
+			h1 { 
+				margin: 5px 0; 
+			}
+			
+			h4 {
+				color: @blue;
+				font-weight: 800;
+				margin: 0 0 9px;
+				text-transform: uppercase;
+			}
+			
+			img { 
+				border: 10px solid @brand-primary;
+				border-radius: 50% 50% 50% 0;
+				margin-top: 60px;
+				max-width: 100%;
+			}
+			
+			.modal h4 {
+				color: #fff;
+				text-transform: none;
+			}
 
 
-	}
-
+		}// .me, .user
+	/* End Users ================================================ */
 
 
 

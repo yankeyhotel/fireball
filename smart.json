@@ -8,6 +8,7 @@
     "bootstrap3-datetimepicker": {},
     "x-editable-bootstrap3": {},
     "font-awesome-4-less": {},
-    "accounts-ui-bootstrap-3-blaze": {}
+    "accounts-ui-bootstrap-3-blaze": {},
+    "iron-router-progress": {}
   }
 }

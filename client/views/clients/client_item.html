@@ -13,9 +13,9 @@
 				
 				{{#if currentUser}}
 					<p>
-						<span class="status-update editable {{status}}" data-type="select" data-pk="{{_id}}" data-name="status">{{status}}</span>
+						<span class="status-update editable {{status}}" data-title="Client Status" data-type="select" data-pk="{{_id}}" data-name="status">{{status}}</span>
 						<span class="seperator">|</span> 
-						<span class="liason-update editable" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
+						<span class="liason-update editable" data-title="Client Liason" data-type="select" data-pk="{{_id}}" data-name="clientLiason" data-pmId="{{clientLiason}}">{{findClientLiason clientLiason}}</span>
 						<span class="seperator">|</span>
 						{{projectCount}} Projects
 					</p>

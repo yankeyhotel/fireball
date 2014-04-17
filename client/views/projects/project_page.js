@@ -12,8 +12,8 @@ Template.projectPage.helpers({
 		}
 	},
 
-	clientName: function(clientId){
-		return Clients.findOne({_id: clientId}).title;
+	clientName: function(){
+		return Clients.findOne().title;
 	},
 	
 	getName: function (id) {
@@ -34,13 +34,8 @@ Template.projectPage.helpers({
 Template.projectPage.rendered = function(template) {
 
 	// set up inline as defaule for x-editable
-	$.fn.editable.defaults.mode = 'inline';
-
-	// get current date / times
-	var today 	= new Date();
-	var dd 		= today.getDate();
-	var mm 		= today.getMonth()+1; //January is 0!
-	var yyyy 	= today.getFullYear();
+	$.fn.editable.defaults.placement 	= 'right';
+	$.fn.editable.defaults.mode 		= 'popup';
 
 	// find user groups by roles
 	function findUsersByRole(role) {
@@ -87,21 +82,26 @@ Template.projectPage.rendered = function(template) {
 			url: 	"empty",
 			toggle: "dblclick",
 
+			clear: false,
 			format: 'DD-MM-YYYY h:mm a',  // 03/26/2014 12:09 PM   
-			viewformat: 'MMM. DD, YYYY',    
-			template: 'D / MMMM / YYYY HH : mm',   
-			combodate: {
-				firstItem: 'name',
-				smartDays: true,
-			    minYear: yyyy,
-			    maxYear: yyyy+1,
-			    minuteStep: 30
+			viewformat: 'MM d, yyyy', // H:iip
+
+			datetimepicker: {
+				autoclose: true,
+				daysOfWeekDisabled: '0,6',
+				minuteStep: 15,
+				minView: 0,
+				showMeridian: true,
+				startDate: new Date(),
+				todayBtn: true,
 			},
 			
 			success: function (response, newValue) {
 				// update value in db
 				var currentProjectId = $(this).data("pk");
-				var projectProperties = { dueDate: new Date(newValue._d).getTime() };
+				var projectProperties = { dueDate: new Date(newValue).getTime() };
+
+				console.log(newValue, projectProperties);
 
 				Projects.update(currentProjectId, {$set: projectProperties}, function(error) {
 					if (error) {

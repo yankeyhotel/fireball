@@ -18,12 +18,22 @@
 							<label for="title" class="control-label">Project Name</label>
 							<input type="text" class="form-control" id="title" name="title" placeholder="Project Name">
 						</div>
-
+						
+						<!--
 						<div class="form-group">
 							<label for="title" class="control-label">Due Date</label>
 							<div class="input-group datetimepicker">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 								<input class="set-due-date form-control" type="text" name="dueDate"/>
+							</div>
+						</div>
+						-->
+						
+						<div class="form-group">
+							<label for="dueDate" class="control-label">Due Date</label>
+							<div class="input-group date">
+								<input class="form-control form_datetime" name="dueDate" type="text" value="" readonly>
+								<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 							</div>
 						</div>
 
@@ -35,21 +45,27 @@
 						<div class="form-group">
 							<label for="title" class="control-label">Project Managers</label><br/>
 							{{#each userByRole "Project Manager"}}
-								{{> userByRole}}
+								<label class="checkbox-inline">
+									<input type="checkbox" name="{{setName profile.role}}" value="{{_id}}"> {{profile.name}}
+								</label>
 							{{/each}}
 						</div>
 
 						<div class="form-group">
 							<label for="title" class="control-label">Designers</label><br/>
 							{{#each userByRole "Designer"}}
-								{{> userByRole}}
+								<label class="checkbox-inline">
+									<input type="checkbox" name="{{setName profile.role}}" value="{{_id}}"> {{profile.name}}
+								</label>
 							{{/each}}
 						</div>
 
 						<div class="form-group">
 							<label for="title" class="control-label">Web Developers</label><br/>
 							{{#each userByRole "Web Developer"}}
-								{{> userByRole}}
+								<label class="checkbox-inline">
+									<input type="checkbox" name="{{setName profile.role}}" value="{{_id}}"> {{profile.name}}
+								</label>
 							{{/each}}
 						</div>
 
