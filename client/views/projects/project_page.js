@@ -12,8 +12,10 @@ Template.projectPage.helpers({
 		}
 	},
 
-	clientName: function(){
-		return Clients.findOne().title;
+	clientName: function(clientId){
+		if (clientId != undefined) {
+			return Clients.findOne(clientId).title;
+		} 
 	},
 	
 	getName: function (id) {
